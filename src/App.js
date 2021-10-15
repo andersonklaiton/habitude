@@ -1,10 +1,11 @@
 
+import Login from "./componentes/login";
 import GlovalStyle from "./styles/global";
 function App() {
   return (
     <>
       <GlovalStyle />
-     
+     <Login/>
     </>
   );
 }
