@@ -21,7 +21,7 @@ export const ContainerForm = styled.div`
     width: 70%;
   }
   button {
-    background-color: #a9b7bd;
+    background-color: var(--light-blue);
     border-radius: 10px;
     border: none;
     cursor: pointer;
