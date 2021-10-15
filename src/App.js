@@ -1,5 +1,10 @@
+import GlovalStyle from "./styles/global";
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <GlovalStyle />
+    </>
+  );
 }
 
 export default App;
