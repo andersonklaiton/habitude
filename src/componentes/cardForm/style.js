@@ -36,5 +36,6 @@ export const ContainerForm = styled.div`
       width: 400px;
       height: 536px;
       margin-right: 80px;
+      margin-top: 50px;
   }
 `;
