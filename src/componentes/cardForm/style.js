@@ -24,7 +24,6 @@ export const ContainerForm = styled.div`
     background-color: var(--light-blue);
     border-radius: 10px;
     border: none;
-    cursor: pointer;
     width: 129px;
     height: 35px;
   }
