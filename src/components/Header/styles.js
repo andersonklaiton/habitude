@@ -18,6 +18,10 @@ export const HeaderField = styled.header`
 
 		color: var(--white);
 	}
+
+	@media (min-width: 680px) {
+		justify-content: space-between;
+	}
 `;
 
 export const Title = styled.h3`
@@ -28,9 +32,14 @@ export const Title = styled.h3`
 	font-size: 14px;
 	line-height: 16px;
 
+	@media (min-width: 680px) {
+		font-size: 20px;
+	}
+
 	@media (min-width: 1024px) {
 		margin: 0 3em;
 
+		text-transform: uppercase;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 36px;
