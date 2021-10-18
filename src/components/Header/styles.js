@@ -29,7 +29,7 @@ export const Title = styled.h3`
 	line-height: 16px;
 
 	@media (min-width: 1024px) {
-		margin: 0 10em;
+		margin: 0 3em;
 
 		font-style: normal;
 		font-weight: bold;
@@ -52,7 +52,7 @@ export const AddButton = styled.button`
 	@media (min-width: 1024px) {
 		display: block;
 
-		margin: 0 10em;
+		margin: 0 3em;
 
 		font-size: 36px;
 
