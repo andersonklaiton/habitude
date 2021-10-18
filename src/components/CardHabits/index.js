@@ -1,5 +1,5 @@
 import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styles'
-import trash from "../../img/trash.png";
+import { BsTrash } from 'react-icons/bs';
 
 const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
 
@@ -16,7 +16,9 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
                 </DataContainer>
 
                 <ButtonContainer>
-                    <TrashButton src={trash} alt="Lixo" />
+                    <TrashButton>
+                        <BsTrash />
+                    </TrashButton>
                     <input type="checkbox" ></input>
                 </ButtonContainer>
             </DataButtonDiv>

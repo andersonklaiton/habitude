@@ -14,12 +14,12 @@ export const Container = styled.div`
 `;
 
 export const NameContainer = styled.div`
-    height: 45px;
-    width: 276px;
+    height: 46px;
+    width: 275px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     background-color: #4D98C7;
 `;
 
@@ -52,6 +52,6 @@ export const ButtonContainer = styled.div`
     margin-right: 5px;
 `;
 
-export const TrashButton = styled.img`
-    text-decoration-color: red;
+export const TrashButton = styled.div`
+    color: red;
 `
