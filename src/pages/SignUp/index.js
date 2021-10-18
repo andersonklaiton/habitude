@@ -5,9 +5,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Form, RedirectMessage, Button, Container } from "./styles";
 import api from "../../services/api";
 
-// import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import { useAuth } from "../../providers/auth";
 
 const SignUp = () => {
+  const history = useHistory();
+  const { auth } = useAuth();
+
   const schema = yup.object().shape({
     username: yup.string().required("Campo Obrigatório"),
     email: yup.string().required("Campo Obrigatório").email("E-mail inválido"),
@@ -29,7 +33,10 @@ const SignUp = () => {
 
       .catch((_) => console.log("Nome de usuário já existe!"));
   };
-
+  if (auth) {
+    history.push("/habits");
+    return <Redirect to="/habits" />;
+  }
   return (
     <>
       <Container>
@@ -63,7 +70,9 @@ const SignUp = () => {
           <Button style={{ width: "100px" }} type="submit">
             Cadastrar
           </Button>
-          <RedirectMessage>Não tem uma conta? Cadastre-se</RedirectMessage>
+          <RedirectMessage>
+            Já possui uma conta? <Link to="/">Logar</Link>
+          </RedirectMessage>
         </Form>
       </Container>
     </>

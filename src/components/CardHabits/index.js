@@ -1,8 +1,15 @@
+import { Redirect, useHistory } from 'react-router-dom';
+import { useAuth } from '../../providers/auth';
 import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styles'
-import trash from "../../img/trash.png";
+// import trash from "../../img/trash.png";
 
 const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
-
+const {auth}=useAuth()
+const history = useHistory();
+if (!auth) {
+    history.push("/");
+    return <Redirect to="/" />;
+  } 
     return (
         <Container>
             <NameContainer>
@@ -16,7 +23,7 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
                 </DataContainer>
 
                 <ButtonContainer>
-                    <TrashButton src={trash} alt="Lixo" />
+                    {/* <TrashButton src={trash} alt="Lixo" /> */}
                     <input type="checkbox" ></input>
                 </ButtonContainer>
             </DataButtonDiv>

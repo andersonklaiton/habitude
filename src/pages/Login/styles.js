@@ -1,6 +1,5 @@
-import styled from "styled-components";
 import banner from "../../assets/images/banner.jpg"
-
+import styled from "styled-components";
 export const Container = styled.div`
   background-image: url(${banner});
   height: 400px;
@@ -20,6 +19,7 @@ export const Form = styled.form`
   transition: 0.5s;
   h1 {
     margin: 25px 0;
+    text-transform: uppercase;
   }
   button {
     margin: 30px 0;
@@ -30,15 +30,15 @@ export const Form = styled.form`
   div + div {
     margin-top: 20px;
   }
-`;
-export const RedirectMessage = styled.div`
-  color: #120c5a;
-  margin-bottom: 20px;
-`;
+`
 export const Button = styled.button`
   border-radius: 10px;
   background-color: #a9b7bd;
   color: #000000;
   border: none;
   padding: 10px 5px;
+`;
+export const RedirectMessage = styled.div`
+  color: #120c5a;
+  margin-bottom: 20px;
 `;

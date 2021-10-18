@@ -9,8 +9,9 @@ export const AuthProvider = ({ children }) => {
   const UserName = localStorage.getItem("userName") || "";
   const [auth, setAuth] = useState(token);
   const [username, setUsername] = useState(UserName);
+  const [erro, setErro]=useState(false)
 
-  const signIn = (data, history) => {
+  const logIn = (data, history) => {
     api
       .post("sessions/", data)
       .then((response) => {
@@ -20,13 +21,14 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("token", JSON.stringify(response.data.access));
         const tokenDecode = jwt_decode(response.data.access);
         setAuth(tokenDecode);
-        history.push("/dashboard");
+        history.push("/habits");
+        setErro(false)
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("não encontrado"),  history.push("/"), setErro(true) );
   };
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, signIn, username }}>
+    <AuthContext.Provider value={{ auth, setAuth, logIn, username, erro }}>
       {children}
     </AuthContext.Provider>
   );

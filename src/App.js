@@ -1,16 +1,12 @@
 
-
-import Login from "./pages/login";
-
-import SignUp from "./pages/SignUp";
+import Routes from "./routes";
 
 import GlovalStyle from "./styles/global";
 function App() {
   return (
     <>
       <GlovalStyle />
-     <Login/>
-      <SignUp />
+     <Routes/>
     </>
   );
 }
