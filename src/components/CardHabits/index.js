@@ -1,4 +1,4 @@
-import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styled'
+import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styles'
 import trash from "../../img/trash.png";
 
 const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
