@@ -7,10 +7,9 @@ export default createGlobalStyle`
         outline:0;
         box-sizing:border-box;
 
-    }
-    
-    span {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+
     }
 
     button {
@@ -34,5 +33,6 @@ export default createGlobalStyle`
         --blue:#4D98C7;
         --pink:#FB5793;
         --yellow:#FDE09A;
+        --white: #FFFFFF;
     }
 `;
