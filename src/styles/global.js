@@ -26,6 +26,11 @@ export default createGlobalStyle`
         text-decoration:none;
     }
 
+    svg,
+	svg path {
+        margin: 0;
+    }
+
     :root {
         --green:#80A26B;
         --red:#CA513C;
@@ -34,5 +39,6 @@ export default createGlobalStyle`
         --pink:#FB5793;
         --yellow:#FDE09A;
         --white: #FFFFFF;
+        --black: #000000;
     }
 `;

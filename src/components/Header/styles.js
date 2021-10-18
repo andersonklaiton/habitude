@@ -1,3 +1,4 @@
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import styled from 'styled-components';
 
 export const HeaderField = styled.header`
@@ -70,4 +71,76 @@ export const AddButton = styled.button`
 			color: white;
 		}
 	}
+`;
+
+export const BackButton = styled.button`
+	position: absolute;
+	left: 212px;
+	top: 38px;
+
+	svg,
+	svg path {
+		width: 25px;
+		height: 25px;
+	}
+`;
+
+export const Content = styled.div`
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	border-bottom: 1px solid lightgray;
+`;
+
+export const RouteBlock = styled(ListItem)`
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 341px;
+	height: 106px;
+
+	padding: 0 !important;
+`;
+
+export const RouteItem = styled(ListItemText)`
+	font-size: 14px;
+`;
+
+export const Icon = styled(ListItemIcon)`
+	font-size: 30px;
+	margin: 0 1em;
+
+	svg,
+	svg path {
+		color: var(--black);
+	}
+`;
+
+export const UserField = styled.div`
+	height: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align: center;
+
+	svg,
+	svg path {
+		font-size: 70px;
+	}
+
+	svg,
+	svg path,
+	p {
+		margin-left: 15px;
+	}
+`;
+
+export const Username = styled.p`
+	margin-top: 2em;
 `;
