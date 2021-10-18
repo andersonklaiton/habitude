@@ -1,7 +1,7 @@
 import { Redirect, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/auth';
 import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styles'
-// import trash from "../../img/trash.png";
+import {BsTrash}from "react-icons/bs"
 
 const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
 const {auth}=useAuth()
@@ -23,7 +23,9 @@ if (!auth) {
                 </DataContainer>
 
                 <ButtonContainer>
-                    {/* <TrashButton src={trash} alt="Lixo" /> */}
+                    <TrashButton>
+                        <BsTrash/>
+                    </TrashButton>
                     <input type="checkbox" ></input>
                 </ButtonContainer>
             </DataButtonDiv>

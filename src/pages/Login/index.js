@@ -8,7 +8,7 @@ import { TextField } from "@material-ui/core";
 
 const Login = () => {
   const history = useHistory();
-  const {erro, logIn, auth } = useAuth();
+  const { logIn, auth } = useAuth();
 
   const schema = yup.object().shape({
     username: yup.string().required("Campo Obrigatório!"),
@@ -41,7 +41,7 @@ const Login = () => {
         <h1>login</h1>
         <TextField
           id="outlined-basic"
-          label="Usuário"
+          label="Username"
           variant="outlined"
           {...register("username")}
           error={!!errors.username}
@@ -49,13 +49,12 @@ const Login = () => {
         />
         <TextField
           id="outlined-basic"
-          label="Senha"
+          label="Password"
           variant="outlined"
           {...register("password")}
           error={!!errors.password}
           helperText={errors.password?.message}
         />
-        {erro && <p style={{color:"red"}}>Usuário não encontrado</p>}
 
         <Button style={{ width: "100px" }} type="submit">
           Entrar
