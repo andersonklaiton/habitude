@@ -10,7 +10,10 @@ import { BsTrash } from "react-icons/bs";
 import { useAuth } from "../../providers/auth";
 import { Redirect, useHistory } from "react-router-dom";
 
-const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
+const CardHabits = ({ teste }) => {
+
+  const { id, categoria, dificuldade, frequencia } = teste;
+
   const { auth } = useAuth();
   const history = useHistory();
   if (!auth) {
