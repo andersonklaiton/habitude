@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import CardHabits from "../../components/CardHabits";
+import CardHabits from "../../components/CardDashbord";
 import { Template } from "../../components/Template";
 import api from "../../services/api";
 
@@ -9,31 +9,25 @@ const HabitsPage = () => {
 
     const [habits, setHabits] = useState([]);
 
-    // const getHabits = () => {
-    //     api.get("/habits/personal/", { headers: { Authorization: `Bearer ${token}` } })
-    //         .then(response => console.log(response.data))
-    // };
-
     const getHabits = useCallback(() => {
         api.get("/habits/personal/", { headers: { Authorization: `Bearer ${token}` } })
             .then(response => setHabits(response.data))
     }, [token])
 
     useEffect(() => {
-        setHabits([])
         getHabits()
     }, [setHabits, getHabits]);
 
     return (
-        <div>
+        <Template>
             {
                 habits.map((teste) => {
-                    return <CardHabits habits={habits} />
+                    return <CardHabits habits={teste} />
                 })
             }
 
             <button></button>
-        </div>
+        </Template>
     )
 };
 

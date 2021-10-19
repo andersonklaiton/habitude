@@ -1,5 +1,4 @@
 import { Switch, Route } from "react-router-dom";
-import CardHabits from "../components/CardHabits";
 import HabitsPage from "../pages/HabitsPage";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
