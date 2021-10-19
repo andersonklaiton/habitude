@@ -1,11 +1,11 @@
-import { Template } from './components/Template';
+import Example from './pages/Example';
 import GlobalStyles from './styles/global';
 
 function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<Template />
+			<Example />
 		</>
 	);
 }

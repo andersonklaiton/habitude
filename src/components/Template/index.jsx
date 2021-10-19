@@ -3,11 +3,11 @@ import PermanentSidebar from '../PermanentSidebar';
 
 import { TemplateContainer } from './styles';
 
-export const Template = () => {
+export const Template = ({ children }) => {
 	return (
 		<TemplateContainer>
 			<Header />
-			<PermanentSidebar />
+			<PermanentSidebar>{children}</PermanentSidebar>
 		</TemplateContainer>
 	);
 };
