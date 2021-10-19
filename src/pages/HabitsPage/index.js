@@ -28,7 +28,7 @@ const HabitsPage = () => {
         <div>
             {
                 habits.map((teste) => {
-                    return <CardHabits teste={habits} />
+                    return <CardHabits habits={habits} />
                 })
             }
 
