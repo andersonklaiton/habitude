@@ -48,12 +48,14 @@ const Login = () => {
           helperText={errors.username?.message}
         />
         <TextField
+        type="password"
           id="outlined-basic"
           label="Password"
           variant="outlined"
           {...register("password")}
           error={!!errors.password}
           helperText={errors.password?.message}
+        
         />
 
         <Button style={{ width: "100px" }} type="submit">
