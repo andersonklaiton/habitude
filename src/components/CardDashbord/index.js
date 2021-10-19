@@ -9,6 +9,8 @@ import {
 import { BsTrash } from "react-icons/bs";
 import { useAuth } from "../../providers/auth";
 import { Redirect, useHistory } from "react-router-dom";
+import Header from "../Header";
+import PermanentSidebar from "../PermanentSidebar";
 
 const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
   const { auth } = useAuth();
@@ -19,6 +21,9 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
   }
 
   return (
+      <>
+      <Header/>
+      <PermanentSidebar/>
     <Container>
       <NameContainer>
         <p>Habito {id}</p>
@@ -38,6 +43,7 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
         </ButtonContainer>
       </DataButtonDiv>
     </Container>
+    </>
   );
 };
 

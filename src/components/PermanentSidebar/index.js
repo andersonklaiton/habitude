@@ -51,7 +51,7 @@ const PermanentSidebar = ({ name }, { children }) => {
 					</List>
 				</SidebarItems>
 			</Sidebar>
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+			<Box component="main" sx={{ flexGrow: 1 }}>
 				{children}
 			</Box>
 		</Container>
