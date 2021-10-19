@@ -7,7 +7,8 @@ export const Template = ({ children }) => {
 	return (
 		<TemplateContainer>
 			<Header />
-			<PermanentSidebar>{children}</PermanentSidebar>
+			<PermanentSidebar />
+			<main>{children}</main>
 		</TemplateContainer>
 	);
 };
