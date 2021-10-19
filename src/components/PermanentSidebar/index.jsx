@@ -1,28 +1,27 @@
-import {
-	Box,
-	CssBaseline,
-	Divider,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-	Toolbar,
-} from '@material-ui/core';
+import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroups } from 'react-icons/md';
-import { Container, Sidebar, UserField, Username } from './styles';
+import {
+	Container,
+	Icon,
+	RouteBlock,
+	RouteItem,
+	Sidebar,
+	SidebarItems,
+	UserField,
+	Username,
+} from './styles';
 
 const drawerWidth = 260;
 
 const PermanentSidebar = ({ name }, { children }) => {
 	return (
-		<Container sx={{ display: 'flex' }}>
+		<Container>
 			<CssBaseline />
 			<Sidebar
 				variant="permanent"
 				sx={{
-					flexShrink: 0,
 					[`& .MuiDrawer-paper`]: {
 						width: drawerWidth + 'px',
 						boxSizing: 'border-box',
@@ -30,7 +29,7 @@ const PermanentSidebar = ({ name }, { children }) => {
 				}}
 			>
 				<Toolbar />
-				<Box sx={{ overflow: 'auto' }}>
+				<SidebarItems>
 					<UserField>
 						<FaUserCircle />
 						<Username>{name}</Username>
@@ -38,19 +37,19 @@ const PermanentSidebar = ({ name }, { children }) => {
 					<Divider />
 					<List>
 						{['Habitos', 'Grupos'].map((text, index) => (
-							<ListItem button key={text}>
-								<ListItemIcon>
+							<RouteBlock button key={text}>
+								<Icon>
 									{index % 2 === 0 ? (
 										<AiOutlineFieldTime />
 									) : (
 										<MdGroups />
 									)}
-								</ListItemIcon>
-								<ListItemText primary={text} />
-							</ListItem>
+								</Icon>
+								<RouteItem primary={text} />
+							</RouteBlock>
 						))}
 					</List>
-				</Box>
+				</SidebarItems>
 			</Sidebar>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 				{children}
