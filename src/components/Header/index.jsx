@@ -18,7 +18,7 @@ import { FiPower } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdAddCircle, MdGroups } from 'react-icons/md';
 import { useState } from 'react';
-import { Box, Divider, Drawer, List } from '@material-ui/core';
+import { Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Header = ({ username }) => {
