@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../providers/auth";
 import { Container, Form, Button, RedirectMessage } from "../Login/styles";
 import { TextField } from "@material-ui/core";
@@ -27,12 +27,7 @@ const Login = () => {
     logIn(data, history);
   };
   if (auth) {
-    history.push("/habits");
-    return <Redirect to="/habits" />;
-  } 
-  else {
-    history.push("/");
-    <Redirect to="/" />;
+    history.push("/dashboard");
   }
 
   return (
@@ -48,14 +43,13 @@ const Login = () => {
           helperText={errors.username?.message}
         />
         <TextField
-        type="password"
+          type="password"
           id="outlined-basic"
           label="Password"
           variant="outlined"
           {...register("password")}
           error={!!errors.password}
           helperText={errors.password?.message}
-        
         />
 
         <Button style={{ width: "100px" }} type="submit">

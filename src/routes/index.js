@@ -1,21 +1,21 @@
-import { Switch,Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import CardHabits from "../components/CardHabits";
-import Login from "../pages/Login"
+import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-          <Login/>
+        <Login />
       </Route>
-      <Route path="/habits">
-        <CardHabits/>
+      <Route path="/dashboard">
+        <CardHabits />
       </Route>
       <Route path="/register">
-          <SignUp/>
+        <SignUp />
       </Route>
     </Switch>
   );
 };
-export default Routes
+export default Routes;

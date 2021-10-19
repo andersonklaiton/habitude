@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Form, RedirectMessage, Button, Container } from "./styles";
 import api from "../../services/api";
 
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../providers/auth";
 
 const SignUp = () => {
@@ -34,8 +34,7 @@ const SignUp = () => {
       .catch((_) => console.log("Nome de usuário já existe!"));
   };
   if (auth) {
-    history.push("/habits");
-    return <Redirect to="/habits" />;
+    history.push("/dashboard");
   }
   return (
     <>
