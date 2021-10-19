@@ -36,7 +36,7 @@ export const DataContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    width: 50%;
+    width: 80%;
     height: 100%;
     color: #A6A6A6;
     margin-left: 5px;
@@ -47,7 +47,7 @@ export const ButtonContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-    width: 50%;
+    width: 20%;
     height: 100%;
     margin-right: 5px;
 `;
