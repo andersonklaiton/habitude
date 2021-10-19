@@ -5,18 +5,21 @@ import {
 	ExpandedButton,
 	HeaderField,
 	Icon,
+	Logout,
 	RouteBlock,
 	RouteItem,
+	Sidebar,
 	Title,
 	UserField,
 	Username,
 } from './styles';
+import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
+import { FiPower } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdAddCircle, MdGroups } from 'react-icons/md';
 import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
-import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
 
 const Header = ({ username }) => {
 	const [state, setState] = useState({ left: false });
@@ -33,7 +36,7 @@ const Header = ({ username }) => {
 	};
 
 	const list = (anchor) => (
-		<Box
+		<Sidebar
 			sx={{
 				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
 			}}
@@ -69,7 +72,11 @@ const Header = ({ username }) => {
 					</RouteBlock>
 				))}
 			</List>
-		</Box>
+			<Logout>
+				<FiPower />
+				<span>Logout</span>
+			</Logout>
+		</Sidebar>
 	);
 
 	return (
