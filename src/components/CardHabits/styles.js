@@ -52,6 +52,6 @@ export const ButtonContainer = styled.div`
     margin-right: 5px;
 `;
 
-export const TrashButton = styled.img`
-    text-decoration-color: red;
+export const TrashButton = styled.div`
+    color: red;
 `

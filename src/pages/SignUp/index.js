@@ -44,7 +44,7 @@ const SignUp = () => {
           <h1>SIGNUP</h1>
           <TextField
             id="outlined-basic"
-            label="Usuário"
+            label="Username"
             variant="outlined"
             {...register("username")}
             error={!!errors.username}
@@ -60,7 +60,7 @@ const SignUp = () => {
           />
           <TextField
             id="outlined-basic"
-            label="Senha"
+            label="Password"
             variant="outlined"
             type="password"
             {...register("password")}
