@@ -7,6 +7,7 @@ import api from "../../services/api";
 
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../providers/auth";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const history = useHistory();
@@ -29,9 +30,9 @@ const SignUp = () => {
   const onSubmitFunction = (data) => {
     api
       .post("/users/", data)
-      .then((response) => console.log(response))
+      .then((_) => toast.success("Conta criada com sucesso!"))
 
-      .catch((_) => console.log("Nome de usuário já existe!"));
+      .catch((_) => toast.error("Nome de usuário já existente!"));
   };
   if (auth) {
     history.push("/dashboard");
