@@ -1,10 +1,12 @@
 import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
+import { FiPower } from 'react-icons/fi';
 import { MdGroups } from 'react-icons/md';
 import {
 	Container,
 	Icon,
+	Logout,
 	RouteBlock,
 	RouteItem,
 	Sidebar,
@@ -49,6 +51,10 @@ const PermanentSidebar = ({ name }, { children }) => {
 							</RouteBlock>
 						))}
 					</List>
+					<Logout>
+						<FiPower />
+						<span>Logout</span>
+					</Logout>
 				</SidebarItems>
 			</Sidebar>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>

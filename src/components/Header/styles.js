@@ -1,5 +1,7 @@
-import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import styled from "styled-components";
+
+import { Box, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import styled from 'styled-components';
+
 
 export const HeaderField = styled.header`
   display: flex;
@@ -19,6 +21,10 @@ export const HeaderField = styled.header`
   @media (min-width: 680px) {
     justify-content: space-between;
   }
+`;
+
+export const Sidebar = styled(Box)`
+	height: 100vh;
 `;
 
 export const Title = styled.h3`
@@ -122,4 +128,23 @@ export const UserField = styled.div`
 
 export const Username = styled.p`
   margin-top: 2em;
+`;
+
+export const Logout = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 33em;
+	font-size: 1rem;
+	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
+		0 0 0.2em rgba(0, 0, 0, 0.17); */
+	color: red;
+
+	svg,
+	svg path {
+		width: 20px;
+		height: 20px;
+		margin: 0 0.5em;
+	}
 `;

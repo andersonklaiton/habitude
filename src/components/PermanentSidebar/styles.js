@@ -59,3 +59,22 @@ export const RouteItem = styled(ListItemText)`
 `;
 
 export const Username = styled.h4``;
+
+export const Logout = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 25em;
+	font-size: 1rem;
+	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
+		0 0 0.2em rgba(0, 0, 0, 0.17); */
+	color: red;
+
+	svg,
+	svg path {
+		width: 20px;
+		height: 20px;
+		margin: 0 0.5em;
+	}
+`;
