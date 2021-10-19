@@ -34,8 +34,8 @@ const SignUp = () => {
       .catch((_) => console.log("Nome de usuário já existe!"));
   };
   if (auth) {
-    history.push("/habits");
-    return <Redirect to="/habits" />;
+    history.push("/dashboard");
+    return <Redirect to="/dashboard" />;
   }
   return (
     <>

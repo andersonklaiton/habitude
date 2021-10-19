@@ -10,16 +10,15 @@ export const Container = styled.div`
     margin: 47px auto;
     border: 2px solid black;
     border-radius: 10px;
-
 `;
 
 export const NameContainer = styled.div`
-    height: 45px;
-    width: 276px;
+    height: 46px;
+    width: 275px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     background-color: #4D98C7;
 `;
 

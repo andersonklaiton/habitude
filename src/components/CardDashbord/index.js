@@ -17,6 +17,7 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
     history.push("/");
     return <Redirect to="/" />;
   }
+
   return (
     <Container>
       <NameContainer>

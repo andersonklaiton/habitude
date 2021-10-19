@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("token", JSON.stringify(response.data.access));
         const tokenDecode = jwt_decode(response.data.access);
         setAuth(tokenDecode);
-        history.push("/habits");
+        history.push("/dashboard");
         toast.success(`Logado com ${data.username}`)
      
 
