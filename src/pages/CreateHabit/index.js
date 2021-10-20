@@ -1,12 +1,15 @@
 import { TextField } from "@material-ui/core";
 import { useHistory } from "react-router";
+
 import { Container, NameContainer, DataContainer, SubmitButton } from "./styles";
+
 import api from "../../services/api";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
+
 import { useAuth } from "../../providers/auth";
 import Header from "../../components/Header";
 import PermanentSidebar from "../../components/PermanentSidebar";
@@ -21,9 +24,11 @@ const CreateHabit = () => {
        
       }
 
+
     const token = JSON.parse(localStorage.getItem('token'));
 
     const id = jwtDecode(token);
+
 
     const schema = yup.object().shape({
         title: yup.string().required("Campo obrigatório"),
@@ -47,6 +52,7 @@ const CreateHabit = () => {
         <>
         <Header/>
         <PermanentSidebar/>
+
         <Container onSubmit={handleSubmit(handleCreateHabit)} >
             <NameContainer>
                 <TextField variant="outlined" label="Hábito" style={{ width: "68%" }} {...register("title")} ></TextField>
@@ -59,8 +65,10 @@ const CreateHabit = () => {
             </DataContainer>
 
         </Container>
+
         </>
     )
 };
 
 export default CreateHabit; 
+

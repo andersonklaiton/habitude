@@ -6,7 +6,9 @@ export const HeaderField = styled.header`
 	justify-content: flex-start;
 	align-items: center;
 	position: absolute;
+
 	width: 100%;
+
 	height: 80px;
 	left: 0px;
 	top: 0px;
@@ -126,6 +128,26 @@ export const UserField = styled.div`
 
 export const Username = styled.p`
 	margin-top: 2em;
+
+`;
+
+export const Logout = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 33em;
+	font-size: 1rem;
+	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
+		0 0 0.2em rgba(0, 0, 0, 0.17); */
+	color: red;
+
+	svg,
+	svg path {
+		width: 20px;
+		height: 20px;
+		margin: 0 0.5em;
+	}
 `;
 
 export const Logout = styled.button`

@@ -1,14 +1,18 @@
 import { useCallback, useEffect, useState } from "react";
+
 import { useHistory } from "react-router-dom";
 import CardHabits from "../../components/CardDashbord";
 import { Template } from "../../components/Template";
 import { useAuth } from "../../providers/auth";
+
 import api from "../../services/api";
 
 const HabitsPage = () => {
 
+
     const history = useHistory()
     const {auth}=useAuth()
+
 
     const token = JSON.parse(localStorage.getItem('token'));
 
@@ -23,10 +27,12 @@ const HabitsPage = () => {
         getHabits()
     }, [setHabits, getHabits]);
 
+
 if (!auth) {
     history.push("/");
    
   }
+
     return (
         <Template>
             {

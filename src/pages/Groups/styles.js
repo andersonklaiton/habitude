@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardsContainer = styled.div`
+
   display: flex;
   grid-gap: 15px;
   flex-direction: column;
@@ -12,4 +13,5 @@ export const CardsContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+
 `;

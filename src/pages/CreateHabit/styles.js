@@ -5,10 +5,12 @@ export const Container = styled.form`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
     margin-top: 80px;
     @media(min-width:767px){
         margin-left: 260px;
     }
+
 `;
 
 export const NameContainer = styled.div`
@@ -35,4 +37,6 @@ export const SubmitButton = styled.button`
     font-size: 20px;
     background-color: #80A26B;
     border-radius: 5px;
+
 `;
+

@@ -1,67 +1,75 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
-  Box,
-  Drawer,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@material-ui/core";
+	Box,
+	Drawer,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+} from '@material-ui/core';
 
 export const Container = styled(Box)`
+
   display: flex;
   max-width: 260px;
 `;
 
 export const Sidebar = styled(Drawer)`
-  flex-shrink: 0;
-  @media (max-width: 1024px) {
-    display: none;
-  }
+	flex-shrink: 0;
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
 `;
 
 export const SidebarItems = styled(Box)`
+
   width: 260px;
   height: 100%;
+
 `;
 
 export const UserField = styled.div`
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  svg,
-  svg path {
-    font-size: 70px;
-  }
+	height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	svg,
+	svg path {
+		font-size: 70px;
+	}
 `;
 
 export const RouteBlock = styled(ListItem)`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 341px;
-  height: 106px;
-  padding: 0 !important;
-  border-bottom: 1px solid lightgray !important;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 341px;
+	height: 106px;
+	padding: 0 !important;
+	border-bottom: 1px solid lightgray !important;
 `;
 
 export const IconBox = styled(ListItemIcon)`
+
   font-size: 30px;
   margin: 0 1em;
   svg,
   svg path {
     color: var(--black);
   }
+
 `;
 
 export const RouteItem = styled(ListItemText)`
-  font-size: 14px;
+	font-size: 14px;
 `;
 
 export const Username = styled.h4``;
 
 export const Logout = styled.button`
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,4 +84,5 @@ export const Logout = styled.button`
     height: 20px;
     margin: 0 0.5em;
   }
+
 `;

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import api from "../../services/api";
 import jwt_decode from "jwt-decode";
-import {toast}from "react-toastify"
+import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const UserName = localStorage.getItem("UserName") || "";
   const [auth, setAuth] = useState(token);
   const [username, setUsername] = useState(UserName);
-  
 
   const logIn = (data, history) => {
     api
@@ -23,15 +22,18 @@ export const AuthProvider = ({ children }) => {
         const tokenDecode = jwt_decode(response.data.access);
         setAuth(tokenDecode);
         history.push("/dashboard");
+
         toast.success(`Logado com ${data.username}`)
-     
 
       })
-      .catch((error) => toast.error("Usuário não encontrado, tente novamente"),  history.push("/"));
+      .catch(
+        (error) => toast.error("Usuário não encontrado, tente novamente"),
+        history.push("/")
+      );
   };
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, logIn, username}}>
+    <AuthContext.Provider value={{ auth, setAuth, logIn, username }}>
       {children}
     </AuthContext.Provider>
   );

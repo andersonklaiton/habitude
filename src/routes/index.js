@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom";
+
 import AllGroups from "../pages/AllGroups";
 import CreateGroup from "../pages/CreateGroup";
 import CreateHabit from "../pages/CreateHabit";
@@ -6,6 +7,7 @@ import Groups from "../pages/Groups";
 import HabitsPage from "../pages/HabitsPage";
 import Login from "../pages/Login";
 import OptionGroup from "../pages/OptionGroup";
+
 
 import SignUp from "../pages/SignUp";
 
@@ -21,6 +23,7 @@ const Routes = () => {
       <Route path="/register">
         <SignUp />
       </Route>
+
       <Route path="/allgroups">
         <AllGroups/>
       </Route>
@@ -35,6 +38,7 @@ const Routes = () => {
       </Route>
       <Route path="/createhabit">
         <CreateHabit />
+
       </Route>
     </Switch>
   );
