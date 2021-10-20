@@ -1,6 +1,10 @@
 import { Switch, Route } from "react-router-dom";
 import CardHabits from "../components/CardHabits";
+
+import CreateHabit from "../pages/CreateHabit";
+
 import Groups from "../pages/Groups";
+
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 
@@ -16,8 +20,13 @@ const Routes = () => {
       <Route path="/register">
         <SignUp />
       </Route>
+
+      <Route path="/create-habit">
+        <CreateHabit />
+
       <Route path="/groups">
         <Groups />
+
       </Route>
     </Switch>
   );
