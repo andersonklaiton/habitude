@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Header from "../../components/Header";
 import PermanentSidebar from "../../components/PermanentSidebar";
 import { useAuth } from "../../providers/auth";
@@ -15,7 +15,7 @@ const AllGroups = () => {
   const history = useHistory();
   if (!auth) {
     history.push("/");
-    return <Redirect to="/" />;
+   
   }
   return (
     <>

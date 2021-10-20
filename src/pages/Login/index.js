@@ -27,7 +27,7 @@ const Login = () => {
     logIn(data, history);
   };
   if (auth) {
-    history.push("/habits");
+    history.push("/dashboard");
   }
 
   return (

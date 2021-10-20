@@ -7,13 +7,14 @@ export const Container = styled.div`
   align-items: center;
   height: 156px;
   width: 277px;
+  margin: 20px auto;
   border: 2px solid black;
-  border-radius: 14px;
+  border-radius: 10px;
 `;
 
 export const NameContainer = styled.div`
   height: 45px;
-  width: 100%;
+  width: 275px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +24,7 @@ export const NameContainer = styled.div`
 
 export const DataButtonDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-around;
   align-items: flex-start;
   height: 100%;

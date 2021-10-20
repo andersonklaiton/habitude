@@ -26,7 +26,7 @@ const Header = ({ username }) => {
 		{
 			page: 'Habits',
 			icon: AiOutlineFieldTime,
-			redirectTo: () => history.push('/habits'),
+			redirectTo: () => history.push('/dashboard'),
 		},
 		{
 			page: 'Groups',

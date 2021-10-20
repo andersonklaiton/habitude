@@ -8,7 +8,8 @@ import api from "../../services/api";
 const HabitsPage = () => {
 
     const history = useHistory()
-    const { auth } = useAuth();
+    const {auth}=useAuth()
+
     const token = JSON.parse(localStorage.getItem('token'));
 
     const [habits, setHabits] = useState([]);
@@ -22,11 +23,10 @@ const HabitsPage = () => {
         getHabits()
     }, [setHabits, getHabits]);
 
-    if (!auth) {
-        history.push("/");
-        
-      }
-
+if (!auth) {
+    history.push("/");
+   
+  }
     return (
         <Template>
             {

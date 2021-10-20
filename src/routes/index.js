@@ -1,8 +1,7 @@
 import { Switch, Route } from "react-router-dom";
-import CardHabits from "../components/CardDashbord";
-
 import AllGroups from "../pages/AllGroups";
 import CreateGroup from "../pages/CreateGroup";
+import CreateHabit from "../pages/CreateHabit";
 import Groups from "../pages/Groups";
 import HabitsPage from "../pages/HabitsPage";
 import Login from "../pages/Login";
@@ -17,16 +16,13 @@ const Routes = () => {
         <Login />
       </Route>
       <Route path="/dashboard">
-        <CardHabits />
+        <HabitsPage />
       </Route>
       <Route path="/register">
         <SignUp />
       </Route>
       <Route path="/allgroups">
         <AllGroups/>
-      </Route>
-      <Route path="/habits"> 
-        <HabitsPage/>
       </Route>
       <Route path="/groups">
         <Groups/>
@@ -36,6 +32,9 @@ const Routes = () => {
       </Route>
       <Route path="/creategroup">
         <CreateGroup/>
+      </Route>
+      <Route path="/createhabit">
+        <CreateHabit />
       </Route>
     </Switch>
   );

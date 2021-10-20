@@ -1,11 +1,12 @@
-import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
-import { AiOutlineFieldTime } from 'react-icons/ai';
+import { Divider, List} from '@material-ui/core';
+import { AiOutlineFieldTime, AiOutlinePoweroff } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroups } from 'react-icons/md';
 import { useHistory } from 'react-router';
 import {
 	Container,
 	IconBox,
+	Logout,
 	RouteBlock,
 	RouteItem,
 	Sidebar,
@@ -14,17 +15,16 @@ import {
 	Username,
 } from './styles';
 
-const drawerWidth = 260;
-
 const PermanentSidebar = ({ name }, { children }) => {
 
-	const UserName = localStorage.getItem("UserName") || ""; 
+  const UserName = localStorage.getItem("UserName") || "";
+
 	const history = useHistory();
 	const pages = [
 		{
 			page: 'Habits',
 			icon: AiOutlineFieldTime,
-			redirectTo: () => history.push('/habits'),
+			redirectTo: () => history.push('/dashboard'),
 		},
 		{
 			page: 'Groups',
@@ -33,19 +33,14 @@ const PermanentSidebar = ({ name }, { children }) => {
 		},
 	];
 
+	const logout = () => {
+		localStorage.clear();
+		window.location.reload();
+	};
+
 	return (
 		<Container>
-			<CssBaseline />
-			<Sidebar
-				variant="permanent"
-				sx={{
-					[`& .MuiDrawer-paper`]: {
-						width: drawerWidth + 'px',
-						boxSizing: 'border-box',
-					},
-				}}
-			>
-				<Toolbar />
+			<Sidebar variant="permanent">
 				<SidebarItems>
 					<UserField>
 						<FaUserCircle />
@@ -67,12 +62,13 @@ const PermanentSidebar = ({ name }, { children }) => {
 								</RouteBlock>
 							)
 						)}
+						<Logout onClick={() => logout()}>
+							<AiOutlinePoweroff />
+							<span>Logout</span>
+						</Logout>
 					</List>
 				</SidebarItems>
 			</Sidebar>
-			<Box component="main" sx={{ flexGrow: 1 }}>
-				{children}
-			</Box>
 		</Container>
 	);
 };
