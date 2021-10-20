@@ -1,11 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TemplateContainer = styled.div``;
 
 export const MainContent = styled.main`
-  position: absolute;
-  width: 277px;
-  height: 156px;
-  left: 582px;
-  top: 171px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 5em;
+
+	@media (min-width: 590px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 `;
+
+export const Body = styled.div``;

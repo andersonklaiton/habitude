@@ -9,18 +9,20 @@ import {
 
 export const Container = styled(Box)`
 	display: flex;
+	max-width: 260px;
 `;
 
 export const Sidebar = styled(Drawer)`
 	flex-shrink: 0;
+
 	@media (max-width: 1024px) {
 		display: none;
 	}
 `;
 
 export const SidebarItems = styled(Box)`
-	overflow: auto;
 	width: 260px;
+	height: 100vh;
 `;
 
 export const UserField = styled.div`
@@ -29,6 +31,7 @@ export const UserField = styled.div`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+
 	svg,
 	svg path {
 		font-size: 70px;
@@ -65,7 +68,7 @@ export const Logout = styled.button`
 	justify-content: center;
 	align-items: center;
 
-	margin-top: 25em;
+	margin-top: 28em;
 	font-size: 1rem;
 	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
 		0 0 0.2em rgba(0, 0, 0, 0.17); */

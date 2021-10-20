@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     * {
@@ -10,6 +10,7 @@ export default createGlobalStyle`
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
     }
     html, body {
+        max-width: 100vw;
         min-height: 100vh;
     }
     button {

@@ -1,5 +1,6 @@
 import {
 	ButtonContainer,
+	Card,
 	DataButtonDiv,
 	DataContainer,
 	NameContainer,
@@ -19,23 +20,101 @@ const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
 	}
 	return (
 		<Template>
-			<NameContainer>
-				<p>Habito {id}</p>
-			</NameContainer>
-			<DataButtonDiv>
-				<DataContainer>
-					<p>Categoria: {categoria}</p>
-					<p>Dificuldade: {dificuldade}</p>
-					<p>Frequencia: {frequencia}</p>
-				</DataContainer>
+			<Card>
+				<NameContainer>
+					<p>Habito {id}</p>
+				</NameContainer>
+				<DataButtonDiv>
+					<DataContainer>
+						<p>Categoria: {categoria}</p>
+						<p>Dificuldade: {dificuldade}</p>
+						<p>Frequencia: {frequencia}</p>
+					</DataContainer>
 
-				<ButtonContainer>
-					<TrashButton>
-						<BsTrash />
-					</TrashButton>
-					<input type="checkbox"></input>
-				</ButtonContainer>
-			</DataButtonDiv>
+					<ButtonContainer>
+						<TrashButton>
+							<BsTrash />
+						</TrashButton>
+						<input type="checkbox"></input>
+					</ButtonContainer>
+				</DataButtonDiv>
+			</Card>
+			<Card>
+				<NameContainer>
+					<p>Habito {id}</p>
+				</NameContainer>
+				<DataButtonDiv>
+					<DataContainer>
+						<p>Categoria: {categoria}</p>
+						<p>Dificuldade: {dificuldade}</p>
+						<p>Frequencia: {frequencia}</p>
+					</DataContainer>
+
+					<ButtonContainer>
+						<TrashButton>
+							<BsTrash />
+						</TrashButton>
+						<input type="checkbox"></input>
+					</ButtonContainer>
+				</DataButtonDiv>
+			</Card>
+			<Card>
+				<NameContainer>
+					<p>Habito {id}</p>
+				</NameContainer>
+				<DataButtonDiv>
+					<DataContainer>
+						<p>Categoria: {categoria}</p>
+						<p>Dificuldade: {dificuldade}</p>
+						<p>Frequencia: {frequencia}</p>
+					</DataContainer>
+
+					<ButtonContainer>
+						<TrashButton>
+							<BsTrash />
+						</TrashButton>
+						<input type="checkbox"></input>
+					</ButtonContainer>
+				</DataButtonDiv>
+			</Card>
+			<Card>
+				<NameContainer>
+					<p>Habito {id}</p>
+				</NameContainer>
+				<DataButtonDiv>
+					<DataContainer>
+						<p>Categoria: {categoria}</p>
+						<p>Dificuldade: {dificuldade}</p>
+						<p>Frequencia: {frequencia}</p>
+					</DataContainer>
+
+					<ButtonContainer>
+						<TrashButton>
+							<BsTrash />
+						</TrashButton>
+						<input type="checkbox"></input>
+					</ButtonContainer>
+				</DataButtonDiv>
+			</Card>
+			<Card>
+				<NameContainer>
+					<p>Habito {id}</p>
+				</NameContainer>
+				<DataButtonDiv>
+					<DataContainer>
+						<p>Categoria: {categoria}</p>
+						<p>Dificuldade: {dificuldade}</p>
+						<p>Frequencia: {frequencia}</p>
+					</DataContainer>
+
+					<ButtonContainer>
+						<TrashButton>
+							<BsTrash />
+						</TrashButton>
+						<input type="checkbox"></input>
+					</ButtonContainer>
+				</DataButtonDiv>
+			</Card>
 		</Template>
 	);
 };

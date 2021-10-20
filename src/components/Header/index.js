@@ -5,6 +5,7 @@ import {
 	ExpandedButton,
 	HeaderField,
 	IconBox,
+	Logout,
 	RouteBlock,
 	RouteItem,
 	Title,
@@ -16,7 +17,11 @@ import { MdAddCircle, MdGroups } from 'react-icons/md';
 import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
-import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
+import {
+	AiOutlineArrowLeft,
+	AiOutlineFieldTime,
+	AiOutlinePoweroff,
+} from 'react-icons/ai';
 import { useHistory } from 'react-router';
 
 const Header = ({ username }) => {
@@ -44,6 +49,11 @@ const Header = ({ username }) => {
 		}
 
 		setState({ ...state, [anchor]: open });
+	};
+
+	const logout = () => {
+		localStorage.clear();
+		window.location.reload();
 	};
 
 	const list = (anchor) => (
@@ -78,6 +88,10 @@ const Header = ({ username }) => {
 						</Content>
 					</RouteBlock>
 				))}
+				<Logout Logout onClick={() => logout()}>
+					<AiOutlinePoweroff />
+					<span>Logout</span>
+				</Logout>
 			</List>
 		</Box>
 	);

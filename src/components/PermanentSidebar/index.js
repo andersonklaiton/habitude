@@ -1,11 +1,12 @@
 import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
-import { AiOutlineFieldTime } from 'react-icons/ai';
+import { AiOutlineFieldTime, AiOutlinePoweroff } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroups } from 'react-icons/md';
 import { useHistory } from 'react-router';
 import {
 	Container,
 	IconBox,
+	Logout,
 	RouteBlock,
 	RouteItem,
 	Sidebar,
@@ -13,8 +14,6 @@ import {
 	UserField,
 	Username,
 } from './styles';
-
-const drawerWidth = 260;
 
 const PermanentSidebar = ({ name }, { children }) => {
 	const history = useHistory();
@@ -31,19 +30,14 @@ const PermanentSidebar = ({ name }, { children }) => {
 		},
 	];
 
+	const logout = () => {
+		localStorage.clear();
+		window.location.reload();
+	};
+
 	return (
 		<Container>
-			<CssBaseline />
-			<Sidebar
-				variant="permanent"
-				sx={{
-					[`& .MuiDrawer-paper`]: {
-						width: drawerWidth + 'px',
-						boxSizing: 'border-box',
-					},
-				}}
-			>
-				<Toolbar />
+			<Sidebar variant="permanent">
 				<SidebarItems>
 					<UserField>
 						<FaUserCircle />
@@ -65,12 +59,13 @@ const PermanentSidebar = ({ name }, { children }) => {
 								</RouteBlock>
 							)
 						)}
+						<Logout onClick={() => logout()}>
+							<AiOutlinePoweroff />
+							<span>Logout</span>
+						</Logout>
 					</List>
 				</SidebarItems>
 			</Sidebar>
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-				{children}
-			</Box>
 		</Container>
 	);
 };
