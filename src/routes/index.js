@@ -1,10 +1,10 @@
 import { Switch, Route } from "react-router-dom";
-import CardHabits from "../components/CardHabits";
 
 import CreateHabit from "../pages/CreateHabit";
 
 import Groups from "../pages/Groups";
 
+import HabitsPage from "../pages/HabitsPage";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 
@@ -15,7 +15,7 @@ const Routes = () => {
         <Login />
       </Route>
       <Route path="/dashboard">
-        <CardHabits />
+        <HabitsPage />
       </Route>
       <Route path="/register">
         <SignUp />
@@ -23,6 +23,7 @@ const Routes = () => {
 
       <Route path="/create-habit">
         <CreateHabit />
+      </Route>
 
       <Route path="/groups">
         <Groups />
