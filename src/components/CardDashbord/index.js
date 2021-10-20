@@ -13,10 +13,7 @@ import { Redirect, useHistory } from "react-router-dom";
 const CardHabits = ({ habits }) => {
   const { auth } = useAuth();
   const history = useHistory();
-  if (!auth) {
-    history.push("/");
-    return <Redirect to="/" />;
-  }
+  
   const { title, category, difficulty, frequency} = habits;
   return (
       <>
