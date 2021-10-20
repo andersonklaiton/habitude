@@ -5,21 +5,20 @@ export const Container = styled.form`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
     margin-top: 80px;
     @media(min-width:767px){
         margin-left: 260px;
     }
-
 `;
 
 export const NameContainer = styled.div`
-    background-color: #80A26B;
+    background-color: #9E4636;
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 `;
 
 export const DataContainer = styled.div`
@@ -35,8 +34,6 @@ export const SubmitButton = styled.button`
     width: 40%;
     height: 30px;
     font-size: 20px;
-    background-color: #80A26B;
+    background-color: #9E4636;
     border-radius: 5px;
-
 `;
-

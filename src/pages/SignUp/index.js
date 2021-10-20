@@ -36,6 +36,7 @@ const SignUp = () => {
   };
   if (auth) {
     history.push("/dashboard");
+
   }
   return (
     <>

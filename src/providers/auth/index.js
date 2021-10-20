@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const token = localStorage.getItem("token") || "";
-  const UserName = localStorage.getItem("userName") || "";
+  const UserName = localStorage.getItem("UserName") || "";
   const [auth, setAuth] = useState(token);
   const [username, setUsername] = useState(UserName);
 
@@ -22,7 +22,9 @@ export const AuthProvider = ({ children }) => {
         const tokenDecode = jwt_decode(response.data.access);
         setAuth(tokenDecode);
         history.push("/dashboard");
-        toast.success(`Logado com ${data.username}`);
+
+        toast.success(`Logado com ${data.username}`)
+
       })
       .catch(
         (error) => toast.error("Usuário não encontrado, tente novamente"),

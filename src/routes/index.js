@@ -1,11 +1,14 @@
 import { Switch, Route } from "react-router-dom";
 
+import AllGroups from "../pages/AllGroups";
+import CreateGroup from "../pages/CreateGroup";
 import CreateHabit from "../pages/CreateHabit";
-
 import Groups from "../pages/Groups";
-
 import HabitsPage from "../pages/HabitsPage";
 import Login from "../pages/Login";
+import OptionGroup from "../pages/OptionGroup";
+
+
 import SignUp from "../pages/SignUp";
 
 const Routes = () => {
@@ -21,12 +24,20 @@ const Routes = () => {
         <SignUp />
       </Route>
 
-      <Route path="/create-habit">
-        <CreateHabit />
+      <Route path="/allgroups">
+        <AllGroups/>
       </Route>
-
       <Route path="/groups">
-        <Groups />
+        <Groups/>
+      </Route>
+      <Route path="/optiongroup">
+        <OptionGroup/>
+      </Route>
+      <Route path="/creategroup">
+        <CreateGroup/>
+      </Route>
+      <Route path="/createhabit">
+        <CreateHabit />
 
       </Route>
     </Switch>

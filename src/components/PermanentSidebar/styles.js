@@ -8,8 +8,9 @@ import {
 } from '@material-ui/core';
 
 export const Container = styled(Box)`
-	display: flex;
-	max-width: 260px;
+
+  display: flex;
+  max-width: 260px;
 `;
 
 export const Sidebar = styled(Drawer)`
@@ -21,8 +22,10 @@ export const Sidebar = styled(Drawer)`
 `;
 
 export const SidebarItems = styled(Box)`
-	width: 260px;
-	height: 100vh;
+
+  width: 260px;
+  height: 100%;
+
 `;
 
 export const UserField = styled.div`
@@ -49,12 +52,14 @@ export const RouteBlock = styled(ListItem)`
 `;
 
 export const IconBox = styled(ListItemIcon)`
-	font-size: 30px;
-	margin: 0 1em;
-	svg,
-	svg path {
-		color: var(--black);
-	}
+
+  font-size: 30px;
+  margin: 0 1em;
+  svg,
+  svg path {
+    color: var(--black);
+  }
+
 `;
 
 export const RouteItem = styled(ListItemText)`
@@ -64,20 +69,20 @@ export const RouteItem = styled(ListItemText)`
 export const Username = styled.h4``;
 
 export const Logout = styled.button`
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
-	margin-top: 28em;
-	font-size: 1rem;
-	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8em;
+  font-size: 1rem;
+  /* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
 		0 0 0.2em rgba(0, 0, 0, 0.17); */
-	color: red;
+  color: red;
+  svg,
+  svg path {
+    width: 20px;
+    height: 20px;
+    margin: 0 0.5em;
+  }
 
-	svg,
-	svg path {
-		width: 20px;
-		height: 20px;
-		margin: 0 0.5em;
-	}
 `;
