@@ -2,9 +2,10 @@ import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroups } from 'react-icons/md';
+import { useHistory } from 'react-router';
 import {
 	Container,
-	Icon,
+	IconBox,
 	RouteBlock,
 	RouteItem,
 	Sidebar,
@@ -16,6 +17,20 @@ import {
 const drawerWidth = 260;
 
 const PermanentSidebar = ({ name }, { children }) => {
+	const history = useHistory();
+	const pages = [
+		{
+			page: 'Habits',
+			icon: AiOutlineFieldTime,
+			redirectTo: () => history.push('/dashboard'),
+		},
+		{
+			page: 'Groups',
+			icon: MdGroups,
+			redirectTo: () => history.push('/groups'),
+		},
+	];
+
 	return (
 		<Container>
 			<CssBaseline />
@@ -36,18 +51,20 @@ const PermanentSidebar = ({ name }, { children }) => {
 					</UserField>
 					<Divider />
 					<List>
-						{['Habitos', 'Grupos'].map((text, index) => (
-							<RouteBlock button key={text}>
-								<Icon>
-									{index % 2 === 0 ? (
-										<AiOutlineFieldTime />
-									) : (
-										<MdGroups />
-									)}
-								</Icon>
-								<RouteItem primary={text} />
-							</RouteBlock>
-						))}
+						{pages.map(
+							({ page, icon: Icon, redirectTo }, index) => (
+								<RouteBlock
+									button
+									onClick={redirectTo}
+									key={page}
+								>
+									<IconBox>
+										<Icon />
+									</IconBox>
+									<RouteItem primary={page} />
+								</RouteBlock>
+							)
+						)}
 					</List>
 				</SidebarItems>
 			</Sidebar>
