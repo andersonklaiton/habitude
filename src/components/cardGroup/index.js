@@ -11,8 +11,7 @@ import PermanentSidebar from "../PermanentSidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const CardGroups = ({ name, category, description, groupId }) => {
-  console.log(groupId)
+const CardGroup = ({ name, category, description, groupId }) => {
   const submitEnter = (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
     axios
@@ -52,4 +51,4 @@ const CardGroups = ({ name, category, description, groupId }) => {
   );
 };
 
-export default CardGroups;
+export default CardGroup;

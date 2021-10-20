@@ -4,7 +4,7 @@ import {
 	Content,
 	ExpandedButton,
 	HeaderField,
-	Icon,
+	IconBox,
 	RouteBlock,
 	RouteItem,
 	Title,
@@ -17,9 +17,23 @@ import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
 import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
+import { useHistory } from 'react-router';
 
 const Header = ({ username }) => {
 	const [state, setState] = useState({ left: false });
+	const history = useHistory();
+	const pages = [
+		{
+			page: 'Habits',
+			icon: AiOutlineFieldTime,
+			redirectTo: () => history.push('/habits'),
+		},
+		{
+			page: 'Groups',
+			icon: MdGroups,
+			redirectTo: () => history.push('/groups'),
+		},
+	];
 
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -54,17 +68,13 @@ const Header = ({ username }) => {
 					padding: 0,
 				}}
 			>
-				{['Habitos', 'Grupos'].map((text, index) => (
-					<RouteBlock button key={text}>
+				{pages.map(({ page, icon: Icon, redirectTo }, index) => (
+					<RouteBlock button onClick={redirectTo} key={page}>
 						<Content>
-							<Icon>
-								{index % 2 === 0 ? (
-									<AiOutlineFieldTime />
-								) : (
-									<MdGroups />
-								)}
-							</Icon>
-							<RouteItem primary={text} />
+							<IconBox>
+								<Icon />
+							</IconBox>
+							<RouteItem primary={page} />
 						</Content>
 					</RouteBlock>
 				))}

@@ -9,30 +9,26 @@ import {
 import { BsTrash } from "react-icons/bs";
 import { useAuth } from "../../providers/auth";
 import { Redirect, useHistory } from "react-router-dom";
-import Header from "../Header";
-import PermanentSidebar from "../PermanentSidebar";
 
-const CardHabits = ({ id, categoria, dificuldade, frequencia }) => {
+const CardHabits = ({ habits }) => {
   const { auth } = useAuth();
   const history = useHistory();
   if (!auth) {
     history.push("/");
     return <Redirect to="/" />;
   }
-
+  const { title, category, difficulty, frequency} = habits;
   return (
       <>
-      <Header/>
-      <PermanentSidebar/>
     <Container>
       <NameContainer>
-        <p>Habito {id}</p>
+        <p>{title}</p>
       </NameContainer>
       <DataButtonDiv>
         <DataContainer>
-          <p>Categoria: {categoria}</p>
-          <p>Dificuldade: {dificuldade}</p>
-          <p>Frequencia: {frequencia}</p>
+          <p>Categoria: {category}</p>
+          <p>Dificuldade: {difficulty}</p>
+          <p>Frequencia: {frequency}</p>
         </DataContainer>
 
         <ButtonContainer>
