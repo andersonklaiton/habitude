@@ -4,7 +4,11 @@ import AllGroups from '../pages/AllGroups';
 import CreateGoal from '../pages/CreateGoal';
 import CreateGroup from '../pages/CreateGroup';
 import CreateHabit from '../pages/CreateHabit';
+
+import EachGroup from '../pages/EachGroup';
+
 import Group from '../pages/Group';
+
 import Groups from '../pages/Groups';
 import HabitsPage from '../pages/HabitsPage';
 import Login from '../pages/Login';
@@ -39,6 +43,8 @@ const Routes = () => {
 			<Route path="/createhabit">
 				<CreateHabit />
 			</Route>
+			<Route path="/eachgroup">
+				<EachGroup/>
 			<Route path="/group/:id">
 				<Group />
       </Route>

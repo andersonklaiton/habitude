@@ -19,6 +19,17 @@ export const ContainerButtons = styled.div`
     margin: 50px 265px 0;
   }
 `;
+export const ContainerSearch= styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  
+  @media (min-width: 767px) {
+    width: 75%;
+    margin: 0px 265px 0;
+  }
+`
 export const ContainerGroups = styled.div`
   align-items: center;
   flex-wrap: wrap;
