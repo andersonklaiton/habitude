@@ -44,10 +44,11 @@ const Routes = () => {
 				<CreateHabit />
 			</Route>
 			<Route path="/eachgroup">
-				<EachGroup/>
+				<EachGroup />
+			</Route>
 			<Route path="/group/:id">
 				<Group />
-      </Route>
+			</Route>
 			<Route exact path="/group/:id/create-goal" >
 				<CreateGoal />
 			</Route>

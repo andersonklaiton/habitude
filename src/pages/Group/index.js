@@ -15,10 +15,13 @@ import {
 	SectionDiv,
 } from './style';
 import { AiOutlineTrophy } from 'react-icons/ai';
+import GoalCard from '../../components/GoalCard';
 
 const Group = () => {
+	const token = JSON.parse(localStorage.getItem('token'));
 	const { id } = useParams();
 	const [activities, setActivities] = useState([]);
+	const [goals, setGoals] = useState([]);
 	const getActivities = useCallback(() => {
 		api.get(`/groups/${id}/`)
 			.then(({ data }) => {
@@ -27,9 +30,15 @@ const Group = () => {
 			.catch((_) => toast.error(`Não foi possível buscar as atividades`));
 	}, [activities]);
 
+	const getGoals = useCallback(() => {
+		api.get(`/groups/${id}/`)
+			.then(({ data }) => setGoals(data.goals))
+	}, [goals])
+
 	useEffect(() => {
 		getActivities();
-	}, [activities]);
+		getGoals();
+	}, [activities, goals]);
 
 	return (
 		<Template>
@@ -43,7 +52,7 @@ const Group = () => {
 						<Name>Goals</Name>
 					</DataBox>
 					<Drawer>
-						<ActivityCard activities={activities} />
+						<GoalCard goals={goals} />
 					</Drawer>
 				</SectionDiv>
 				<SectionDiv>
