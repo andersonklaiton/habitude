@@ -22,6 +22,11 @@ export const NameContainer = styled.div`
 	align-items: center;
 	border-radius: 10px 10px 0 0;
 	background-color: #4d98c7;
+
+	:hover {
+		cursor: pointer;
+		background-color: #1198c7;
+	}
 `;
 
 export const DataButtonDiv = styled.div`
@@ -47,15 +52,17 @@ export const DataContainer = styled.div`
 	color: #a6a6a6;
 `;
 export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-  width: 50%;
-  height: 100%;
-  margin-right: 5px;
-  p {
-    color: var(--red);
-    cursor: pointer;
-  }
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-end;
+	width: 50%;
+	height: 100%;
+	margin-right: 5px;
+	p {
+		color: var(--red);
+		cursor: pointer;
+	}
 `;
+
