@@ -18,7 +18,11 @@ import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
 
-import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
+import {
+	AiOutlineArrowLeft,
+	AiOutlineFieldTime,
+	AiOutlinePoweroff,
+} from 'react-icons/ai';
 
 import { useHistory } from 'react-router';
 
