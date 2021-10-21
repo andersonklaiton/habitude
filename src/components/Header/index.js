@@ -58,6 +58,12 @@ const Header = () => {
 		window.location.reload();
 	};
 
+	const toAddPage = (path) => {
+		routeLocation.pathname === '/groups'
+			? history.push('/creategroup')
+			: history.push('/createhabit');
+	};
+
 	const list = (anchor) => (
 		<Box
 			sx={{
@@ -106,7 +112,7 @@ const Header = () => {
 			<Title>
 				{routeLocation.pathname === '/groups' ? 'Grupos' : 'Hábitos'}
 			</Title>
-			<AddButton>
+			<AddButton onClick={toAddPage}>
 				<MdAddCircle />
 			</AddButton>
 			<Drawer
