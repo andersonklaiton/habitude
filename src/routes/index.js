@@ -37,6 +37,9 @@ const Routes = () => {
 			<Route path="/createhabit">
 				<CreateHabit />
 			</Route>
+			<Route path="/groups/:id">
+				<CreateHabit />
+			</Route>
 		</Switch>
 	);
 };
