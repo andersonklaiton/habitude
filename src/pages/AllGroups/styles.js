@@ -14,7 +14,7 @@ export const ContainerButtons = styled.div`
   align-items: center;
   height: 100px;
   margin-top: 50px;
-  @media (min-width:767px) {
+  @media (min-width: 767px) {
     width: 75%;
     margin: 50px 265px 0;
   }
@@ -25,10 +25,9 @@ export const ContainerGroups = styled.div`
   flex-direction: row;
   justify-content: center;
   display: flex;
-  @media (min-width:767px){
-      margin: 0 265px;
-      width: 75%;
-
+  @media (min-width: 767px) {
+    margin: 0 265px;
+    width: 75%;
   }
-  
 `;
+

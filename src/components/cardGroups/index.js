@@ -1,5 +1,6 @@
-import axios from "axios";
+
 import { toast } from "react-toastify";
+import api from "../../services/api";
 import {
   Container,
   NameContainer,
@@ -13,8 +14,8 @@ function CardGroups({ group }) {
 
   const submitExit = (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
-    axios
-	.delete(`https://kenzie-habits.herokuapp.com/groups/${id}/unsubscribe/`, {
+    api
+	.delete(`groups/${id}/unsubscribe/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((_) => toast.success("Sucesso ao sair do grup!"))

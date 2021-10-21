@@ -7,6 +7,7 @@ import { AllGroupsContext } from "../../providers/allGroups";
 import CardGroups from "../../components/cardGroup";
 import { Button, ContainerButtons, ContainerGroups } from "./styles";
 
+
 const AllGroups = () => {
   const { cardGroups, FPage, BPage } = useContext(AllGroupsContext);
 
@@ -23,6 +24,7 @@ const AllGroups = () => {
         <Button onClick={BPage}>Anterior</Button>
         <Button onClick={FPage}>Próxima</Button>
       </ContainerButtons>
+  
       <ContainerGroups>
         {cardGroups.map((group, index) => (
           <CardGroups
