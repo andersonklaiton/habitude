@@ -7,7 +7,6 @@ import { AllGroupsContext } from "../../providers/allGroups";
 import CardGroups from "../../components/cardGroup";
 import { Button, ContainerButtons, ContainerGroups } from "./styles";
 
-
 const AllGroups = () => {
   const { cardGroups, FPage, BPage } = useContext(AllGroupsContext);
 
@@ -15,12 +14,11 @@ const AllGroups = () => {
   const history = useHistory();
   if (!auth) {
     history.push("/");
-   
   }
   return (
     <>
-      <Header/>
-      <PermanentSidebar/>
+      <Header />
+      <PermanentSidebar />
       <ContainerButtons>
         <Button onClick={BPage}>Anterior</Button>
         <Button onClick={FPage}>Próxima</Button>
