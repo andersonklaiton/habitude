@@ -117,7 +117,8 @@ const Header = () => {
 			</ExpandedButton>
 			<Title>
 				{routeLocation.pathname === '/groups' ||
-				routeLocation.pathname === '/allgroups'
+				routeLocation.pathname === '/allgroups' ||
+				routeLocation.pathname === '/optiongroup'
 					? 'Grupos'
 					: 'Hábitos'}
 			</Title>
