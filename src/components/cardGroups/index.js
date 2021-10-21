@@ -1,4 +1,5 @@
-import axios from 'axios';
+
+import api from "../../services/api";
 import { useHistory } from 'react-router';
 import { toast } from 'react-toastify';
 import {
@@ -15,16 +16,13 @@ function CardGroups({ group }) {
 
 	const submitExit = (todeleteid) => {
 		const token = JSON.parse(localStorage.getItem('token'));
-		axios
-			.delete(
-				`https://kenzie-habits.herokuapp.com/groups/${todeleteid}/unsubscribe/`,
-				{
-					headers: { Authorization: `Bearer ${token}` },
-				}
-			)
-			.then((_) => toast.success('Sucesso ao sair do grup!'))
-			.catch((_) => toast.error('Erro ao sair do grupo!'));
-	};
+		api
+	.delete(`groups/${id}/unsubscribe/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((_) => toast.success("Sucesso ao sair do grup!"))
+      .catch((_) => toast.error("Erro ao sair do grupo!"));
+  };
 
 	return (
 		<Container>
@@ -42,5 +40,6 @@ function CardGroups({ group }) {
 			</DataButtonDiv>
 		</Container>
 	);
+
 }
 export default CardGroups;

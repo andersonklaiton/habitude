@@ -52,6 +52,7 @@ export const DataContainer = styled.div`
 	color: #a6a6a6;
 `;
 export const ButtonContainer = styled.div`
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -64,3 +65,4 @@ export const ButtonContainer = styled.div`
 		cursor: pointer;
 	}
 `;
+

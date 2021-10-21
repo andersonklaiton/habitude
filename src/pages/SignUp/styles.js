@@ -1,12 +1,36 @@
 import styled from "styled-components";
-import banner from "../../assets/images/banner.jpg"
+
 
 export const Container = styled.div`
-  background-image: url(${banner});
+  
   height: 400px;
   border: 1px solid transparent;
   background-repeat: no-repeat;
+  position:absolute;
+  top: -20px;
+  left: 15px;
+  right: 100px;
+  
 `;
+
+export const ContainerImage = styled.div`
+
+
+height: 100%;
+  border: 1px solid transparent;
+  background-repeat: no-repeat;
+  @media(min-width:767px){
+  position:absolute;
+  left:-250px;
+  top: 0;
+  width: 60%;
+  img{
+    width: 145%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+`
 export const Form = styled.form`
   border-radius: 10px;
   background-color: #fff;
