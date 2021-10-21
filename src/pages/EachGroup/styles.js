@@ -7,3 +7,9 @@ export const Container = styled.form`
         margin-left: 300px;
     }
 `
+export const Button= styled.button`
+    background-color: var(--red);
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+`
