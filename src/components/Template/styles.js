@@ -8,6 +8,7 @@ export const MainContent = styled.main`
 	height: 156px;
 	left: 20px;
 	top: 171px;
+
 	@media (min-width: 767px) {
 		left: 582px;
 	}

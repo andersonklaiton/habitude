@@ -1,22 +1,28 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
-import { useHistory } from "react-router-dom";
-import CardHabits from "../../components/CardDashbord";
-import { Template } from "../../components/Template";
-import { useAuth } from "../../providers/auth";
+import { useHistory } from 'react-router-dom';
+import CardHabits from '../../components/CardDashbord';
+import { Template } from '../../components/Template';
+import { useAuth } from '../../providers/auth';
 
-import api from "../../services/api";
+import api from '../../services/api';
 
 const HabitsPage = () => {
+	const history = useHistory();
+	const { auth } = useAuth();
+
+	const token = JSON.parse(localStorage.getItem('token'));
+
+	const [habits, setHabits] = useState([]);
+
+	const getHabits = useCallback(() => {
+		api.get('/habits/personal/', {
+			headers: { Authorization: `Bearer ${token}` },
+		}).then((response) => setHabits(response.data));
+	}, [token]);
 
 
-    const history = useHistory()
-    const {auth}=useAuth()
-
-
-    const token = JSON.parse(localStorage.getItem('token'));
-
-    const [habits, setHabits] = useState([]);
+    const [change, setChange] = useState(false);
 
     const getHabits = useCallback(() => {
         api.get("/habits/personal/", { headers: { Authorization: `Bearer ${token}` } })
@@ -25,25 +31,28 @@ const HabitsPage = () => {
 
     useEffect(() => {
         getHabits()
-    }, [setHabits, getHabits]);
-
-
+        setChange(false)
+    }, [setHabits, getHabits, change]);
 if (!auth) {
-    history.push("/");
-   
-  }
-
+		history.push('/');
+	}
     return (
         <Template>
             {
-                habits.map((teste) => {
-                    return <CardHabits habits={teste} />
+                habits.map((habit, index) => {
+                    return <CardHabits key={index} habits={habit} setChange={setChange} />
                 })
             }
 
-            <button></button>
-        </Template>
-    )
+
+	return (
+		<Template>
+			{habits.map((teste) => {
+				return <CardHabits habits={teste} />;
+			})}
+			<button></button>
+		</Template>
+	);
 };
 
 export default HabitsPage;
