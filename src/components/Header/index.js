@@ -64,8 +64,9 @@ const Header = () => {
 	};
 
 	const toAddPage = () => {
-		routeLocation === '/groups' || routeLocation === '/allgroups'
-			? history.push('/creategroup')
+		routeLocation.pathname === '/groups' ||
+		routeLocation.pathname === '/allgroups'
+			? history.push('/optiongroup')
 			: history.push('/createhabit');
 	};
 
