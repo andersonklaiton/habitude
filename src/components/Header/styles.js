@@ -6,7 +6,9 @@ export const HeaderField = styled.header`
 	justify-content: flex-start;
 	align-items: center;
 	position: absolute;
-	width: 100vw;
+
+	width: 100%;
+
 	height: 80px;
 	left: 0px;
 	top: 0px;
@@ -100,7 +102,6 @@ export const RouteItem = styled(ListItemText)`
 export const IconBox = styled(ListItemIcon)`
 	font-size: 30px;
 	margin: 0 1em;
-
 	svg,
 	svg path {
 		color: var(--black);

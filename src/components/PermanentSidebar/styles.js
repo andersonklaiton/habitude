@@ -22,12 +22,13 @@ export const Sidebar = styled(Drawer)`
 
 export const SidebarItems = styled(Box)`
 	width: 260px;
-	height: 100vh;
+	height: 100%;
 `;
 
 export const UserField = styled.div`
 	height: 250px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -35,6 +36,12 @@ export const UserField = styled.div`
 	svg,
 	svg path {
 		font-size: 70px;
+	}
+
+	svg,
+	svg path,
+	h4 {
+		margin-top: 1em !important;
 	}
 `;
 
@@ -51,6 +58,7 @@ export const RouteBlock = styled(ListItem)`
 export const IconBox = styled(ListItemIcon)`
 	font-size: 30px;
 	margin: 0 1em;
+
 	svg,
 	svg path {
 		color: var(--black);
@@ -67,8 +75,7 @@ export const Logout = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	margin-top: 28em;
+	margin-top: 29em;
 	font-size: 1rem;
 	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
 		0 0 0.2em rgba(0, 0, 0, 0.17); */

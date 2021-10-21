@@ -1,11 +1,12 @@
-import { AuthProvider } from "./auth"
+import { AllGroupsProvider } from "./allGroups";
+import { AuthProvider } from "./auth";
 
-const Providers = ({children})=>{
-    return(
-        <AuthProvider>
-            {children}
-        </AuthProvider>
-    )
-}
+const Providers = ({ children }) => {
+  return (
+    <AuthProvider>
+      <AllGroupsProvider>{children}</AllGroupsProvider>
+    </AuthProvider>
+  );
+};
 
-export default Providers
+export default Providers;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -16,27 +17,29 @@ export const Container = styled.div`
 		margin: 1em 2em;
 	}
 
+
 `;
 
 export const NameContainer = styled.div`
-	height: 45px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px 10px 0 0;
-	background-color: #bbe3d1;
+    height: 46px;
+    width: 275px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    background-color: #4D98C7;
 `;
 
 export const DataButtonDiv = styled.div`
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-start;
-	height: 100%;
-	width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
 `;
 
 export const DataContainer = styled.div`
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -60,8 +63,10 @@ export const ButtonContainer = styled.div`
 		width: 20px;
 		height: 20px;
 	}
+
 `;
 
 export const TrashButton = styled.div`
-	color: red;
-`;
+    color: red;
+`
+

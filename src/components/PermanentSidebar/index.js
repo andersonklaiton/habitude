@@ -1,4 +1,4 @@
-import { Box, CssBaseline, Divider, List, Toolbar } from '@material-ui/core';
+import { Divider, List } from '@material-ui/core';
 import { AiOutlineFieldTime, AiOutlinePoweroff } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroups } from 'react-icons/md';
@@ -15,7 +15,8 @@ import {
 	Username,
 } from './styles';
 
-const PermanentSidebar = ({ name }, { children }) => {
+const PermanentSidebar = () => {
+	const UserName = localStorage.getItem('UserName') || '';
 	const history = useHistory();
 	const pages = [
 		{
@@ -41,7 +42,7 @@ const PermanentSidebar = ({ name }, { children }) => {
 				<SidebarItems>
 					<UserField>
 						<FaUserCircle />
-						<Username>{name}</Username>
+						<Username>{UserName}</Username>
 					</UserField>
 					<Divider />
 					<List>

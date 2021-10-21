@@ -3,16 +3,14 @@ import styled from 'styled-components';
 export const TemplateContainer = styled.div``;
 
 export const MainContent = styled.main`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
+	width: 277px;
+	height: 156px;
+	left: 20px;
+	top: 171px;
 
-	margin-top: 5em;
-
-	@media (min-width: 590px) {
-		flex-direction: row;
-		flex-wrap: wrap;
+	@media (min-width: 767px) {
+		left: 582px;
 	}
 `;
 

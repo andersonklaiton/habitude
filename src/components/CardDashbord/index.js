@@ -1,5 +1,13 @@
-import { ButtonContainer, Container, DataButtonDiv, DataContainer, NameContainer, TrashButton } from './styles'
+import {
+	ButtonContainer,
+	Container,
+	DataButtonDiv,
+	DataContainer,
+	NameContainer,
+	TrashButton,
+} from './styles';
 import { BsTrash } from 'react-icons/bs';
+
 import api from '../../services/api';
 import { toast } from "react-toastify";
 import { useState } from 'react';
@@ -46,18 +54,8 @@ const CardHabits = ({ habits, setChange }) => {
 
     const [checked, setChecked] = useState(achieved);
 
-    return (
-        <Container>
-            <NameContainer>
-                <p>{title}</p>
-            </NameContainer>
-            <DataButtonDiv>
-                <DataContainer>
-                    <p>Categoria: {category}</p>
-                    <p>Dificuldade: {difficulty}</p>
-                    <p>Frequencia: {frequency}</p>
-                </DataContainer>
 
+						
                 <ButtonContainer>
                     <TrashButton>
                         <BsTrash onClick={deleteHabit} />
@@ -70,3 +68,4 @@ const CardHabits = ({ habits, setChange }) => {
 }
 
 export default CardHabits;
+
