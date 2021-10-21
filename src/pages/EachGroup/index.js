@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import Header from "../../components/Header";
 import PermanentSidebar from "../../components/PermanentSidebar";
 import api from "../../services/api";
-import { Container } from "./styles";
+import { Button, Container } from "./styles";
 import * as yup from "yup";
 import { useState } from "react";
 import CardEachGroup from "../../components/cardEachGroup";
@@ -48,7 +48,7 @@ const EachGroup = () => {
           style={{ width: "70%" }}
           {...register("id")}
         ></TextField>
-        <button type="submit">Pesquisar</button>
+        <Button type="submit">Pesquisar</Button>
       </Container>
 
       {have === true ? (
