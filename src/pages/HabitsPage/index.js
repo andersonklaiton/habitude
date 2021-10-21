@@ -6,11 +6,15 @@ import { Template } from "../../components/Template";
 import { useAuth } from "../../providers/auth";
 
 import api from "../../services/api";
+import { HabitsContainer } from "./styles";
 
 const HabitsPage = () => {
 
 	const history = useHistory();
 	const { auth } = useAuth();
+	if (!auth) {
+		history.push('/');
+	}
 
 	const token = JSON.parse(localStorage.getItem('token'));
 
@@ -29,21 +33,20 @@ const HabitsPage = () => {
 		setChange(false);
 	}, [setHabits, getHabits, change]);
 
-	if (!auth) {
-		history.push('/');
-	}
-
 	return (
 		<Template>
-			{habits.map((habit, index) => {
-				return (
-					<CardHabits
-						key={index}
-						habits={habit}
-						setChange={setChange}
-					/>
-				);
-			})}
+			<HabitsContainer>
+
+				{habits.map((habit, index) => {
+					return (
+						<CardHabits
+							key={index}
+							habits={habit}
+							setChange={setChange}
+						/>
+					);
+				})}
+			</HabitsContainer>
 		</Template>
 	);
 

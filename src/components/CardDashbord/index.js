@@ -91,9 +91,9 @@ const CardHabits = ({ habits, setChange }) => {
               setChecked(!achieved);
             }}
             checked={checked}
-            onClick={() => {
-              changeAchieved();
-            }}
+            onClick={
+              changeAchieved
+            }
           ></input>
         </ButtonContainer>
       </DataButtonDiv>
