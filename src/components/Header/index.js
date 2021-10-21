@@ -17,14 +17,18 @@ import { MdAddCircle, MdGroups } from 'react-icons/md';
 import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
+import {
+	AiOutlineArrowLeft,
+	AiOutlineFieldTime,
+	AiOutlinePoweroff,
+} from 'react-icons/ai';
+import { useLocation, useHistory } from 'react-router';
 
-import { AiOutlineArrowLeft, AiOutlineFieldTime } from 'react-icons/ai';
-
-import { useHistory } from 'react-router';
-
-const Header = ({ username }) => {
+const Header = () => {
+	const UserName = localStorage.getItem('UserName') || '';
 	const [state, setState] = useState({ left: false });
 	const history = useHistory();
+	const routeLocation = useLocation();
 	const pages = [
 		{
 			page: 'Habits',
@@ -65,7 +69,7 @@ const Header = ({ username }) => {
 		>
 			<UserField>
 				<FaUserCircle />
-				<Username>{username}</Username>
+				<Username>{UserName}</Username>
 			</UserField>
 			<BackButton>
 				<AiOutlineArrowLeft />
@@ -99,7 +103,9 @@ const Header = ({ username }) => {
 			<ExpandedButton onClick={toggleDrawer('left', true)}>
 				<GiHamburgerMenu />
 			</ExpandedButton>
-			<Title>Groups</Title>
+			<Title>
+				{routeLocation.pathname === '/groups' ? 'Grupos' : 'Hábitos'}
+			</Title>
 			<AddButton>
 				<MdAddCircle />
 			</AddButton>
