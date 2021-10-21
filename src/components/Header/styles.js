@@ -135,7 +135,7 @@ export const Logout = styled.button`
 	justify-content: center;
 	align-items: center;
 
-	margin-top: 33em;
+	margin-top: 26em;
 	font-size: 1rem;
 	/* text-shadow: 1px 1px 2px red, 0 0 1em rgba(0, 0, 0, 0.25),
 		0 0 0.2em rgba(0, 0, 0, 0.17); */
