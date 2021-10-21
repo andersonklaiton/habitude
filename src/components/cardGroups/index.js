@@ -17,7 +17,7 @@ function CardGroups({ group }) {
 	.delete(`https://kenzie-habits.herokuapp.com/groups/${id}/unsubscribe/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((_) => toast.success("Sucesso ao sai do grup!"))
+      .then((_) => toast.success("Sucesso ao sair do grup!"))
       .catch((_) => toast.error("Erro ao sair do grupo!"));
   };
 
