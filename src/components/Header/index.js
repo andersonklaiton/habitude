@@ -115,7 +115,10 @@ const Header = () => {
 				<GiHamburgerMenu />
 			</ExpandedButton>
 			<Title>
-				{routeLocation.pathname === '/groups' ? 'Grupos' : 'Hábitos'}
+				{routeLocation.pathname === '/groups' ||
+				routeLocation.pathname === '/allgroups'
+					? 'Grupos'
+					: 'Hábitos'}
 			</Title>
 			<AddButton onClick={toAddPage}>
 				<MdAddCircle />
