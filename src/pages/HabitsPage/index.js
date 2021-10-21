@@ -21,36 +21,28 @@ const HabitsPage = () => {
 		}).then((response) => setHabits(response.data));
 	}, [token]);
 
+	const [change, setChange] = useState(false);
 
-    const [change, setChange] = useState(false);
+	useEffect(() => {
+		getHabits();
+		setChange(false);
+	}, [setHabits, getHabits, change]);
 
-    const getHabits = useCallback(() => {
-        api.get("/habits/personal/", { headers: { Authorization: `Bearer ${token}` } })
-            .then(response => setHabits(response.data))
-    }, [token])
-
-    useEffect(() => {
-        getHabits()
-        setChange(false)
-    }, [setHabits, getHabits, change]);
-if (!auth) {
+	if (!auth) {
 		history.push('/');
 	}
-    return (
-        <Template>
-            {
-                habits.map((habit, index) => {
-                    return <CardHabits key={index} habits={habit} setChange={setChange} />
-                })
-            }
-
 
 	return (
 		<Template>
-			{habits.map((teste) => {
-				return <CardHabits habits={teste} />;
+			{habits.map((habit, index) => {
+				return (
+					<CardHabits
+						key={index}
+						habits={habit}
+						setChange={setChange}
+					/>
+				);
 			})}
-			<button></button>
 		</Template>
 	);
 };
