@@ -1,9 +1,6 @@
-import { toast } from 'react-toastify';
 import { Activities, Activity, Time, Title } from './styles';
 
 const ActivityCard = ({ activities }) => {
-	console.log(activities);
-
 	return (
 		<Activities>
 			{activities !== null || activities !== undefined

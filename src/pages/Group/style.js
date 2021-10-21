@@ -55,3 +55,14 @@ export const Drawer = styled.section`
 `;
 
 export const Name = styled.h2``;
+
+export const AddButton = styled.button`
+	display: inline-block;
+	margin-left: 30px;
+
+	svg,
+	svg path {
+		font-size: 20px;
+		color: lightgreen;
+	}
+`;
