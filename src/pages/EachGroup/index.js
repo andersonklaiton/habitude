@@ -23,13 +23,11 @@ const EachGroup = () => {
   const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   const SeachGroup = ({ id }) => {
+      setHave(true)
     api
       .get(`groups/${id}/`)
-      .then((response) => setGroup(response.data), setHave(true))
-      .catch(
-        (_) => toast.error("Grupo inexistente"),
-        history.push("/eachgroup")
-      );
+      .then((response) => (setGroup(response.data), setHave(true)))
+      .catch((_) => toast.error("Grupo inexistente"), setHave(false));
   };
 
   return (
@@ -47,13 +45,15 @@ const EachGroup = () => {
         <button type="submit">Pesquisar</button>
       </Container>
 
-      {have === true && (
+      {have === true ? (
         <CardEachGroup
           name={group.name}
           category={group.category}
           description={group.description}
           groupId={group.id}
         />
+      ) : (
+        <></>
       )}
     </>
   );
