@@ -5,21 +5,17 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-
-	max-width: 100vw;
-`;
-
-export const Card = styled.div`
 	box-sizing: border-box;
-	height: 156px;
-	width: 260px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	margin: 10px 0;
 	border-radius: 10px;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 277px;
+	height: 166px;
 
 	@media (min-width: 590px) {
 		margin: 1em 2em;
 	}
+
 `;
 
 export const NameContainer = styled.div`
@@ -46,7 +42,7 @@ export const DataContainer = styled.div`
 	justify-content: space-evenly;
 	align-items: flex-start;
 	width: 50%;
-	height: 65%;
+	height: 100%;
 	color: #a6a6a6;
 	margin-left: 5px;
 `;
@@ -57,7 +53,7 @@ export const ButtonContainer = styled.div`
 	justify-content: space-around;
 	align-items: flex-end;
 	width: 50%;
-	height: 65%;
+	height: 100%;
 	margin-right: 5px;
 
 	input {

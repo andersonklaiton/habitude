@@ -9,6 +9,8 @@ const HabitsPage = () => {
 
     const [habits, setHabits] = useState([]);
 
+    const [change, setChange] = useState(false);
+
     const getHabits = useCallback(() => {
         api.get("/habits/personal/", { headers: { Authorization: `Bearer ${token}` } })
             .then(response => setHabits(response.data))
@@ -16,13 +18,14 @@ const HabitsPage = () => {
 
     useEffect(() => {
         getHabits()
-    }, [setHabits, getHabits]);
+        setChange(false)
+    }, [setHabits, getHabits, change]);
 
     return (
         <Template>
             {
-                habits.map((teste) => {
-                    return <CardHabits habits={teste} />
+                habits.map((habit, index) => {
+                    return <CardHabits key={index} habits={habit} setChange={setChange} />
                 })
             }
 
