@@ -7,8 +7,7 @@ import PermanentSidebar from '../../components/PermanentSidebar';
 import { useAuth } from '../../providers/auth';
 import api from '../../services/api';
 import { CardsContainer } from './styles';
-import { useAuth } from "../../providers/auth";
-import { useHistory } from "react-router-dom";
+
 
 function Groups() {
 	const history = useHistory();
