@@ -7,10 +7,15 @@ export const MainContent = styled.main`
 	width: 277px;
 	height: 156px;
 	left: 20px;
-	top: 171px;
+	top: 101px;
+
+	@media (min-width:600px){
+		width: 600px;
+	}
 
 	@media (min-width: 767px) {
-		left: 582px;
+		left: 292px;
+		width: 80%;
 	}
 `;
 
