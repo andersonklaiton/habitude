@@ -13,7 +13,7 @@ import {
 	Username,
 } from './styles';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdAddCircle, MdGroups } from 'react-icons/md';
+import { MdAddCircle, MdGroupAdd, MdGroups } from 'react-icons/md';
 import { useState } from 'react';
 import { Box, Divider, Drawer, List } from '@material-ui/core';
 import { FaUserCircle } from 'react-icons/fa';
@@ -40,6 +40,11 @@ const Header = () => {
 			icon: MdGroups,
 			redirectTo: () => history.push('/groups'),
 		},
+		{
+			page: 'All Groups',
+			icon: MdGroupAdd,
+			redirectTo: () => history.push('/allgroups'),
+		},
 	];
 
 	const toggleDrawer = (anchor, open) => (event) => {
@@ -56,6 +61,12 @@ const Header = () => {
 	const logout = () => {
 		localStorage.clear();
 		window.location.reload();
+	};
+
+	const toAddPage = () => {
+		routeLocation === '/groups' || routeLocation === '/allgroups'
+			? history.push('/creategroup')
+			: history.push('/createhabit');
 	};
 
 	const list = (anchor) => (
@@ -106,7 +117,7 @@ const Header = () => {
 			<Title>
 				{routeLocation.pathname === '/groups' ? 'Grupos' : 'Hábitos'}
 			</Title>
-			<AddButton>
+			<AddButton onClick={toAddPage}>
 				<MdAddCircle />
 			</AddButton>
 			<Drawer
