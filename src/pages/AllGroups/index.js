@@ -5,7 +5,7 @@ import PermanentSidebar from "../../components/PermanentSidebar";
 import { useAuth } from "../../providers/auth";
 import { AllGroupsContext } from "../../providers/allGroups";
 import CardGroups from "../../components/cardGroup";
-import { Button, ContainerButtons, ContainerGroups, ContainerSearch } from "./styles";
+import { Button, ContainerButtons, ContainerGroups} from "./styles";
 
 
 

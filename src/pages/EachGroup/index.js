@@ -10,11 +10,15 @@ import * as yup from "yup";
 import { useState } from "react";
 import CardEachGroup from "../../components/cardEachGroup";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../providers/auth";
+
 
 const EachGroup = () => {
   const [have, setHave] = useState(false);
   const [group, setGroup] = useState([]);
-  const history = useHistory();
+  const history = useHistory()
+  const {auth}=useAuth()
+ 
 
   const schema = yup.object().shape({
     id: yup.number().required("Campo obrigatório"),
@@ -29,7 +33,9 @@ const EachGroup = () => {
       .then((response) => (setGroup(response.data), setHave(true)))
       .catch((_) => toast.error("Grupo inexistente"), setHave(false));
   };
-
+  if (!auth) {
+    history.push('/');
+}
   return (
     <>
       <Header />
