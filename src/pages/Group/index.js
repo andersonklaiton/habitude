@@ -46,7 +46,7 @@ const Group = () => {
 						<Name>Goals</Name>
 						<AddButton
 							onClick={() =>
-								history.push(`/group/${id}/create-goal`)
+								history.push(`/${id}/create-goal`)
 							}
 						>
 							<GrAdd />
@@ -62,7 +62,7 @@ const Group = () => {
 						<Name>Activities</Name>
 						<AddButton
 							onClick={() =>
-								history.push(`/group/${id}/create-activity`)
+								history.push(`/${id}/create-activity`)
 							}
 						>
 							<GrAdd />

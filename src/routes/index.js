@@ -49,10 +49,7 @@ const Routes = () => {
 			<Route path="/group/:id">
 				<Group />
 			</Route>
-			<Route exact path="/group/:id/create-goal">
-				<CreateGoal />
-			</Route>
-			<Route exact path="/group/:id/create-goal">
+			<Route exact path="/:id/create-goal">
 				<CreateGoal />
 			</Route>
 		</Switch>
