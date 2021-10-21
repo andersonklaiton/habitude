@@ -7,6 +7,8 @@ import api from '../../services/api';
 import { CardsContainer } from './styles';
 
 function Groups() {
+	const history = useHistory()
+  const {auth}=useAuth()
 	const [groups, setGroups] = useState([]);
 	const [token] = useState(JSON.parse(localStorage.getItem('token')) || '');
 
@@ -24,7 +26,9 @@ function Groups() {
 	useEffect(() => {
 		getGroups();
 	});
-
+if(!auth){
+    history.push("/")
+  }
 	return (
 		<>
 			<Header />
