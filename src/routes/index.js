@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import AllGroups from '../pages/AllGroups';
 import CreateGroup from '../pages/CreateGroup';
 import CreateHabit from '../pages/CreateHabit';
+import EachGroup from '../pages/EachGroup';
 import Groups from '../pages/Groups';
 import HabitsPage from '../pages/HabitsPage';
 import Login from '../pages/Login';
@@ -36,6 +37,9 @@ const Routes = () => {
 			</Route>
 			<Route path="/createhabit">
 				<CreateHabit />
+			</Route>
+			<Route path="/eachgroup">
+				<EachGroup/>
 			</Route>
 		</Switch>
 	);

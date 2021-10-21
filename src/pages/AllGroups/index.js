@@ -5,11 +5,16 @@ import PermanentSidebar from "../../components/PermanentSidebar";
 import { useAuth } from "../../providers/auth";
 import { AllGroupsContext } from "../../providers/allGroups";
 import CardGroups from "../../components/cardGroup";
-import { Button, ContainerButtons, ContainerGroups } from "./styles";
+import { Button, ContainerButtons, ContainerGroups, ContainerSearch } from "./styles";
+
 
 
 const AllGroups = () => {
   const { cardGroups, FPage, BPage } = useContext(AllGroupsContext);
+
+  const SearchGroup=  (path)=>{
+    history.push(path)
+  }
 
   const { auth } = useAuth();
   const history = useHistory();
@@ -23,8 +28,8 @@ const AllGroups = () => {
       <ContainerButtons>
         <Button onClick={BPage}>Anterior</Button>
         <Button onClick={FPage}>Próxima</Button>
+        <Button onClick={()=>SearchGroup("/eachgroup")}>Pesquisar</Button>
       </ContainerButtons>
-  
       <ContainerGroups>
         {cardGroups.map((group, index) => (
           <CardGroups
