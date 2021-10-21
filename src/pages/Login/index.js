@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../providers/auth";
-import { Container, Form, Button, RedirectMessage, ContainerImage, ContainerWhite } from "../Login/styles";
+import { Container, Form, Button, RedirectMessage, ContainerImage} from "../Login/styles";
 import { TextField } from "@material-ui/core";
 import banner from "../../assets/images/banner.jpg"
 
@@ -36,7 +36,7 @@ const Login = () => {
       <ContainerImage> 
         <img alt="banner" src={banner}/>
       </ContainerImage>
-      <ContainerWhite/>
+    
     <Container>
       <Form onSubmit={handleSubmit(onSubmitLogin)}>
         <h1>login</h1>

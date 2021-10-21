@@ -5,24 +5,19 @@ export const Container = styled.div`
   border: 1px solid transparent;
   background-repeat: no-repeat;
   position:absolute;
-  right:100px;
-  top: 0;
+  top: -20px;
+  left: 15px;
+  right: 100px;
 
 `;
 
-export const ContainerWhite = styled.div`
-  height: 100%;
-  width: 42%;
-  position:absolute;
-  top: 0;
-  background-color: white;
-  right: 0;
-`
+
 export const ContainerImage = styled.div`
 
   height: 100%;
   border: 1px solid transparent;
   background-repeat: no-repeat;
+  @media(min-width:767px){
   position:absolute;
   left:-250px;
   top: 0;
@@ -32,6 +27,7 @@ export const ContainerImage = styled.div`
     height: 100%;
     overflow: hidden;
   }
+}
 `
 export const Form = styled.form`
   border-radius: 10px;

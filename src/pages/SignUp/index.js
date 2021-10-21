@@ -2,7 +2,7 @@ import { TextField } from "@material-ui/core";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Form, RedirectMessage, Button, Container, ContainerWhite, ContainerImage } from "./styles";
+import { Form, RedirectMessage, Button, Container, ContainerImage } from "./styles";
 import api from "../../services/api";
 import banner from "../../assets/images/banner.jpg"
 import { Link, useHistory } from "react-router-dom";
@@ -43,7 +43,7 @@ const SignUp = () => {
     <ContainerImage> 
         <img alt="banner" src={banner}/>
       </ContainerImage>
-      <ContainerWhite/>
+      
       <Container>
         <Form onSubmit={handleSubmit(onSubmitFunction)}>
           <h1>SIGNUP</h1>
