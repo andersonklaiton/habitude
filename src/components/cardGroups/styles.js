@@ -46,3 +46,16 @@ export const DataContainer = styled.div`
 	text-align: start;
 	color: #a6a6a6;
 `;
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  margin-right: 5px;
+  p {
+    color: var(--red);
+    cursor: pointer;
+  }
+`;
