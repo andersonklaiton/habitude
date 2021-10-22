@@ -1,10 +1,14 @@
-import { Divider, List } from '@material-ui/core';
+import { Divider, List, TextField } from '@material-ui/core';
+import { useState } from 'react';
 import { AiOutlineFieldTime, AiOutlinePoweroff } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdGroupAdd, MdGroups } from 'react-icons/md';
+import { AiFillEdit } from 'react-icons/ai'
 import { useHistory } from 'react-router';
+import api from '../../services/api';
 import {
 	Container,
+	EditButton,
 	IconBox,
 	Logout,
 	RouteBlock,
@@ -13,10 +17,13 @@ import {
 	SidebarItems,
 	UserField,
 	Username,
+	NameField
 } from './styles';
+import jwtDecode from 'jwt-decode';
+import { toast } from 'react-toastify';
 
 const PermanentSidebar = () => {
-	const UserName = localStorage.getItem('UserName') || '';
+	const [UserName, setUserName] = useState(localStorage.getItem('UserName') || '');
 	const history = useHistory();
 	const pages = [
 		{
@@ -41,13 +48,31 @@ const PermanentSidebar = () => {
 		window.location.reload();
 	};
 
+	const [isEdit, setIsEdit] = useState(false);
+
+	const token = JSON.parse(localStorage.getItem("token"));
+
+	const { user_id } = jwtDecode(token)
+
+	const changeName = () => {
+		setIsEdit(!isEdit);
+		api.patch(`/users/${user_id}/`, { username: UserName }, {
+			headers: { Authorization: `Bearer ${token}` },
+		})
+			.then((_) => { toast.success("Username alterado!") })
+			.catch((_) => { toast.error("Erro!") })
+	}
+
 	return (
 		<Container>
 			<Sidebar variant="permanent">
 				<SidebarItems>
 					<UserField>
 						<FaUserCircle />
-						<Username>{UserName}</Username>
+						{!isEdit ? (<NameField><Username>{UserName}</Username><AiFillEdit onClick={() => { setIsEdit(!isEdit) }} /></NameField>) : (<EditButton>
+							<TextField onChange={(e) => { setUserName(e.target.value) }} />
+							<AiFillEdit onClick={changeName} />
+						</EditButton>)}
 					</UserField>
 					<Divider />
 					<List>

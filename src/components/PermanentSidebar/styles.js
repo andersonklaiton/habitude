@@ -71,6 +71,27 @@ export const RouteItem = styled(ListItemText)`
 
 export const Username = styled.h4``;
 
+export const EditButton = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	svg, svg path {
+		font-size: 20px;
+	}
+`;
+
+export const NameField = styled.div`
+	display: flex;
+	font-size: 20px;
+	justify-content: space-between;
+	align-items: center;
+
+	svg, svg path {
+		font-size: 20px;
+	}
+`
+
 export const Logout = styled.button`
 	display: flex;
 	justify-content: center;
