@@ -60,7 +60,9 @@ const PermanentSidebar = () => {
 			headers: { Authorization: `Bearer ${token}` },
 		})
 			.then((_) => { toast.success("Username alterado!") })
-			.catch((_) => { toast.error("Erro!") })
+			.catch((_) => { toast.error("Erro!") });
+
+		localStorage.setItem("UserName", UserName)
 	}
 
 	return (
