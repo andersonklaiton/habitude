@@ -7,13 +7,15 @@ export const Container = styled.div`
   align-items: center;
   height: 156px;
   width: 277px;
-  border: 2px solid black;
-  border-radius: 14px;
+  margin: 20px auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+		rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 10px;
 `;
 
 export const NameContainer = styled.div`
   height: 45px;
-  width: 100%;
+  width: 275px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +25,6 @@ export const NameContainer = styled.div`
 
 export const DataButtonDiv = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   height: 100%;
@@ -35,7 +36,22 @@ export const DataContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  /* width: 50%; */
   height: 100%;
   color: #a6a6a6;
   margin-left: 5px;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  margin-right: 5px;
+  p {
+    color: var(--green);
+    cursor: pointer;
+  }
 `;

@@ -1,7 +1,7 @@
 import { Divider, List } from '@material-ui/core';
 import { AiOutlineFieldTime, AiOutlinePoweroff } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
-import { MdGroups } from 'react-icons/md';
+import { MdGroupAdd, MdGroups } from 'react-icons/md';
 import { useHistory } from 'react-router';
 import {
 	Container,
@@ -28,6 +28,11 @@ const PermanentSidebar = () => {
 			page: 'Groups',
 			icon: MdGroups,
 			redirectTo: () => history.push('/groups'),
+		},
+		{
+			page: 'All Groups',
+			icon: MdGroupAdd,
+			redirectTo: () => history.push('/allgroups'),
 		},
 	];
 

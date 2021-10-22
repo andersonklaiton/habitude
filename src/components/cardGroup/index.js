@@ -8,15 +8,17 @@ import {
 
 import Header from "../Header";
 import PermanentSidebar from "../PermanentSidebar";
-import axios from "axios";
 import { toast } from "react-toastify";
+import api from "../../services/api";
+
 
 const CardGroup = ({ name, category, description, groupId }) => {
+ 
   const submitEnter = (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
-    axios
+    api
       .post(
-        `https://kenzie-habits.herokuapp.com/groups/${id}/subscribe/`,
+        `groups/${id}/subscribe/`,
         {},
         {
           headers: {

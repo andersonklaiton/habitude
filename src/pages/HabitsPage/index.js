@@ -6,10 +6,15 @@ import { Template } from '../../components/Template';
 import { useAuth } from '../../providers/auth';
 
 import api from '../../services/api';
+import { ButtonAdd, HabitsContainer } from './styles';
 
 const HabitsPage = () => {
 	const history = useHistory();
 	const { auth } = useAuth();
+
+	if (!auth) {
+		history.push('/');
+	}
 
 	const token = JSON.parse(localStorage.getItem('token'));
 
@@ -21,22 +26,29 @@ const HabitsPage = () => {
 		}).then((response) => setHabits(response.data));
 	}, [token]);
 
+	const [change, setChange] = useState(false);
+
 	useEffect(() => {
 		getHabits();
-	}, [setHabits, getHabits]);
-
-	if (!auth) {
-		history.push('/');
-	}
-
-	console.log(habits);
+		setChange(false);
+	}, [setHabits, getHabits, change]);
 
 	return (
 		<Template>
-			{habits.map((teste) => {
-				return <CardHabits habits={teste} />;
-			})}
-			<button></button>
+			<HabitsContainer>
+				{habits.map((habit, index) => {
+					return (
+						<CardHabits
+							key={index}
+							habits={habit}
+							setChange={setChange}
+						/>
+					);
+				})}
+				<ButtonAdd onClick={() => history.push('/createhabit')}>
+					Adicionar
+				</ButtonAdd>
+			</HabitsContainer>
 		</Template>
 	);
 };

@@ -1,12 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
-
+import { useHistory } from 'react-router';
 import CardGroups from '../../components/cardGroups';
 import Header from '../../components/Header';
 import PermanentSidebar from '../../components/PermanentSidebar';
+import { useAuth } from '../../providers/auth';
 import api from '../../services/api';
-import { CardsContainer } from './styles';
+import { ButtonAdd, CardsContainer } from './styles';
+
 
 function Groups() {
+	const history = useHistory();
+	const { auth } = useAuth();
 	const [groups, setGroups] = useState([]);
 	const [token] = useState(JSON.parse(localStorage.getItem('token')) || '');
 
@@ -17,13 +21,16 @@ function Groups() {
 			},
 		}).then((response) => {
 			setGroups(response.data);
-			console.log(response.data);
 		});
 	}, [token]);
 
 	useEffect(() => {
 		getGroups();
 	});
+
+	if (!auth) {
+		history.push('/');
+	}
 
 	return (
 		<>
@@ -38,6 +45,11 @@ function Groups() {
 			) : (
 				<div>Você não participa de nenhum grupo ainda</div>
 			)}
+
+			<ButtonAdd onClick={() => history.push('/creategroup')}>
+				Adicionar
+			</ButtonAdd>
+
 		</>
 	);
 }
