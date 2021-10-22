@@ -21,3 +21,13 @@ export const Title = styled.p`
 export const Time = styled.p`
 	padding: 5px;
 `;
+
+export const AchievedButton = styled.button`
+	color: green;
+	font-size: 20px;
+`;
+
+export const TrashButton = styled.button`
+	color: red;
+	font-size: 20px;
+`;

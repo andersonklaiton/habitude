@@ -11,6 +11,7 @@ export const Goal = styled.div`
 	@media (min-width: 768px) {
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-end;
 	}
 `;
 
@@ -28,6 +29,6 @@ export const TrashButton = styled.button`
 `;
 
 export const AchievedButton = styled.button`
-	color: green; 
+	color: green;
 	font-size: 20px;
 `;

@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 
 import AllGroups from '../pages/AllGroups';
+import CreateActivity from '../pages/CreateAcivity';
 import CreateGoal from '../pages/CreateGoal';
 import CreateGroup from '../pages/CreateGroup';
 import CreateHabit from '../pages/CreateHabit';
@@ -49,11 +50,11 @@ const Routes = () => {
 			<Route path="/group/:id">
 				<Group />
 			</Route>
-			<Route exact path="/group/:id/create-goal">
+			<Route exact path="/create-goal/:id">
 				<CreateGoal />
 			</Route>
-			<Route exact path="/:id/create-goal">
-				<CreateGoal />
+			<Route exact path="/create-activity/:id">
+				<CreateActivity />
 			</Route>
 		</Switch>
 	);
