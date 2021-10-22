@@ -13,16 +13,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 
 const CardHabits = ({ habits, setChange }) => {
-  const {
-    title,
-    category,
-    difficulty,
-    frequency,
-    achieved,
-    how_much_achieved,
-    user,
-    id,
-  } = habits;
+  const { title, category, difficulty, frequency, achieved, id } = habits;
 
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -91,9 +82,7 @@ const CardHabits = ({ habits, setChange }) => {
               setChecked(!achieved);
             }}
             checked={checked}
-            onClick={
-              changeAchieved
-            }
+            onClick={changeAchieved}
           ></input>
         </ButtonContainer>
       </DataButtonDiv>

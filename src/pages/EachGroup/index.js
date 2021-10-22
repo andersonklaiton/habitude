@@ -12,13 +12,11 @@ import CardEachGroup from "../../components/cardEachGroup";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../providers/auth";
 
-
 const EachGroup = () => {
   const [have, setHave] = useState(false);
   const [group, setGroup] = useState([]);
-  const history = useHistory()
-  const {auth}=useAuth()
- 
+  const history = useHistory();
+  const { auth } = useAuth();
 
   const schema = yup.object().shape({
     id: yup.number().required("Campo obrigatório"),
@@ -27,15 +25,18 @@ const EachGroup = () => {
   const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   const SeachGroup = ({ id }) => {
-      setHave(true)
+    setHave(true);
     api
       .get(`groups/${id}/`)
-      .then((response) => (setGroup(response.data), setHave(true)))
+      .then((response) => {
+        setGroup(response.data);
+        setHave(true);
+      })
       .catch((_) => toast.error("Grupo inexistente"), setHave(false));
   };
   if (!auth) {
-    history.push('/');
-}
+    history.push("/");
+  }
   return (
     <>
       <Header />
